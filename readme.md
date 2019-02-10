@@ -1,5 +1,6 @@
 # .emacs.d
 Emacs May Augment/Amplify Computer Science
+<br>`s/May/(Mightily|.*)`
 
 ## hmm
 * Saints Row is Home Sweet Home!
@@ -8,3 +9,4 @@ Emacs May Augment/Amplify Computer Science
 		* Going from Vim to Emacs is like WTF is with bnpf? They are all over the place! (Compared against hjkl in Vim; f is all the way on the other side of the keyboard!).
 * I am still trying to decide how <code>C-</code>, and <code>M-</code>, should be thumbed, or fingered (indexed, middled, ringed, pinkied/littled).
 * It would be nice if links showed where they went in the mode line, or echo area (or minibuffer, or whatever it is called).
+* After Vimserting text; it is habitual to reach for the key to escape…
