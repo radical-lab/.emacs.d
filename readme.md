@@ -1,6 +1,6 @@
 # .emacs.d
 Emacs May Augment/Amplify Computer Science
-<br>`s/May/(Mightily|.*)`
+<br>(…<!--Emacs Mightily/.. Augments/Amplifies Computer Science-->…)
 
 ## hmm
 * Saints Row is Home Sweet Home!
