@@ -1,6 +1,5 @@
 # .emacs.d
-Emacs May Augment/Amplify Computer Science
-<br>(…<!--Emacs Mightily/.. Augments/Amplifies Computer Science-->…)
+Emacs Metaprogrammatically Augments/Amplifies Computer Science
 
 ## hmm
 * Saints Row is Home Sweet Home!
