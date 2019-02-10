@@ -1,5 +1,7 @@
 # .emacs.d
-Emacs Metaprogrammatically/Mightily Augments/Amplifies Computer Science
+`/Emacs Metaprogrammatically/Mightily/Masterfully Augments/Amplifies (Coding Skills|Computer Science)/`
+
+
 
 ## hmm
 * Saints Row is Home Sweet Home!
