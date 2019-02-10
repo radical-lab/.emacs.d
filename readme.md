@@ -1,5 +1,5 @@
 # .emacs.d
-`/Emacs (Metaprogrammatically|Magically|Masterfully|Mightily) (Augments|Amplifies) (Coding (Skills|Style)|Computer Science)/`
+`/Emacs (Magically|Metaprogrammatically|Masterfully|Mightily) (Amplifies|Augments) (Computational Spells|Coding (Skills|Style)|Computer Science)/`
 * https://en.wikipedia.org/wiki/Intelligence_amplification
 * https://en.wikipedia.org/wiki/Augmented_learning
 
