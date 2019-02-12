@@ -12,4 +12,4 @@
 * I am still trying to decide how `C-`, and `M-`, should be thumbed, or fingered (indexed, middled, ringed, pinkied/littled).
 * It would be nice if links showed where they went in the mode line, or echo area (or minibuffer, or whatever it is called).
 * After Vimserting text; it is habitual to reach for the key to escape…
-* shortcutfoo.com is unusable
+* Shortcutfoo.com is unusable!
