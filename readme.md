@@ -14,3 +14,4 @@
 * After Vimserting text; it is habitual to reach for the key to escape…
 * Shortcutfoo.com is unusable!
 * It would be nice if `info` files didn't loop; `\0`.
+* The docs should instruct the user to demand/command "-thing"s from Emacs, instead of requesting/begging "-thing"s; empower the user! #psycho*logical*
