@@ -13,3 +13,4 @@
 * It would be nice if links showed where they went in the mode line, or echo area (or minibuffer, or whatever it is called).
 * After Vimserting text; it is habitual to reach for the key to escape…
 * Shortcutfoo.com is unusable!
+* It would be nice if `info` files didn't loop.
