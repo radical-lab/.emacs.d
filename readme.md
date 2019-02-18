@@ -15,4 +15,4 @@
 * Shortcutfoo.com is unusable!
 * It would be nice if `info` files didn't loop; `\0`.
 * The docs should instruct the user to demand/command "-thing"s from Emacs, instead of requesting/begging "-thing"s; empower the user! #psycho[logical](https://en.wikipedia.org/wiki/Linguistic_relativity)
-* I hate the use of subtraction in function-names and modifier-keys; under_score snake_case, and divisible factors of `:÷M`, is optimal.
+* I hate the use of subtraction in function-names and modifier-keys; under_score snake_case, and divisible factors of `:÷M()`, is optimal.
