@@ -18,5 +18,5 @@
 * I hate the use of subtraction in function-names and modifier-keys; under_score snake_case, and divisible factors of `:÷M()`, are optimal.
 	* `(M :)` applies the λlisp modus operandi.
 * RSI
-	* `/(Repetitive|Recursive) Strain Injury/`
+	* `/(Repetitive|Recursive) Strain Injury/`.
 	* Rhomboid Strain Injury; paralysing muscle spasms, thought needed x-rays, but didn't goto doctor/hospital (thought about it though could not physically), and instead just googled it; took a while to think of muscle spasms, since i awoke up, and was paralysed by pain from any movement, including breathing; coughing is the worst as it is uncontrollable; this is the third, and worst, time…
