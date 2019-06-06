@@ -3,6 +3,43 @@
 * https://en.wikipedia.org/wiki/Intelligence_amplification
 * https://en.wikipedia.org/wiki/Augmented_learning
 
+*This needs a goodd word!* (sic erat scriptum)
+
+## Computational Communication
+### Microphone
+* turing machine macros
+	* recursion = feedback loop from speakers
+* (lojban) natural language
+	* !xhosa clicks = mouse clicks
+	* chinese tones = mouse scrolling
+	* chinese tones = magnification zooming
+### WWW Camera
+* cover gestures
+	* thumbed touch = lock screen (toggle)
+	* thumbed hold = `kill -9 *; cat eyes` (toggle)
+	* indexed touch = `sudo $next`
+	* indexed hold = sudomode (toggle)
+* (great ape) sign language
+	* thumbs up = yes
+	* thumbs down = no
+	* middle finger = `-n`
+	* vulcan salute = `-y`
+	* secret hitler salute c̄ finger moustache = `rm -fr / # french self-destruct willn't recursively descend into /dev/sd$x`
+* facial gestures
+	* bare teeth = allocate all resources to `$task` until it is done
+	* bare teeth = `kill -9 $task`
+	* bare teeth = just undo `/freeze|crash|hang|kernel panic|.*/`!!! `D=8<`
+	* bare teeth = reisub
+### Keyboard Driven Environment (EMACS)
+* 40≤n-key rollover keyboard
+	* wasd versus esdf
+		* wasd is easier on emacs pinky
+		* esdf is home sweet home
+* n-key rollover keyboard
+	* face plant = undo
+### Touch Screen (Tiling Window Manager)
+### Touch Pad (Mouse)
+
 ## hmm
 * Saints Row is Home Sweet Home!
 	* Query:
