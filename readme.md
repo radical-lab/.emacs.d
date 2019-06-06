@@ -50,7 +50,7 @@ gui ∋ {emacs, browser, terminal}
 * microsoft product activation
 * gourmet menu
 ### Touch Pad (Mouse)
-### the future
+### The Future
 * `/motorcycle|space/` helmet
 	* bci; neurological exoskellington (intelligence amplification, augmented learning)
 	* cameras
@@ -75,7 +75,7 @@ gui ∋ {emacs, browser, terminal}
 	* all `/wifi|transmitters|transceivers|receivers|.*/` will be external
 	* `/photonic|audio|.*/` wireless technology is preferential
 
-## hmm
+## Hmm
 * Saints Row is Home Sweet Home!
 	* Query:
 		* I have started learning Emacs, and have just completed `C-h t`, where the conclusion says to complain, but not how, nor who ∴ I complain to you; what is the correct way to type in Emacs? Left `C-` can only be pinkied. Right `C-` could either be pinkied, ringed, or thumbed. Left, and right, `M-` could either be middled, indexed, or thumbed. I am assuming you type `C-`, and `M-`, on the opposite side of the keyboard from the following key, using both hands; but it may be more productively efficient to use one hand for one hand touch typing, thus enabling the multitasking of two computers, concurrently.
