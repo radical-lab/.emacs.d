@@ -13,7 +13,7 @@ gui ∋ {emacs, browser, terminal}
 
 the future
 * `/motorcycle|space/` helmet
-	* bci; intelligence amplification (neurological exoskellington)
+	* bci; neurological exoskellington (intelligence amplification, augmented learning)
 	* cameras
 		* depth perception
 	* microphones
