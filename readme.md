@@ -27,7 +27,7 @@ the future
 		* directional speakers for binaural recording (external)
 		* directional sound from microphones (internal); the right (interference) pattern(s)'ll support lightsaber renderings
 * gloves, or even a full body suit (polygraph, exoskellington)
-	* wetsuit versus drysuit
+	* wetsuit versus drysuit versus spacesuit
 	* super heroic lycra to the rescue!!! :D
 ### Microphone (Voice Recognition)
 * turing machine macros
