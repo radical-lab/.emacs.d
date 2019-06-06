@@ -31,6 +31,7 @@ the future
 	* super heroic lycra to the rescue!!! :D
 * faraday cage to protect from neurodegenerative cosmic rays and carcinogenic radi(ation)o waves
 	* all `/wifi|transmitters|transceivers|receivers|.*/` will be external
+	* `/photonic|audio|.*/` wireless technology is preferential
 ### Microphone (Voice Recognition)
 * turing machine macros
 	* recursion = feedback loop from speakers
