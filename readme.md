@@ -75,8 +75,8 @@ gui ∋ {emacs, browser, terminal}
 	* all `/wifi|transmitters|transceivers|receivers|.*/` will be external
 	* `/photonic|audio|.*/` wireless technology is preferential
 * `/charging|refueling|.*/`
-	* O₂
-	* e⁻
+	* O₂ (probably use `/algae|.*/` for portability)
+	* e⁻ (probably use body temperature for portability)
 
 ## Hmm
 * Saints Row is Home Sweet Home!
