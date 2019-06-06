@@ -17,7 +17,7 @@ gui ∋ {emacs, browser, terminal}
 	* !xhosa clicks = mouse clicks
 	* chinese tones = mouse scrolling
 	* chinese tones = magnification zooming
-### WWW Camera
+### WWW Camera (fingerprint reader)
 * cover gestures
 	* thumbed touch = lock screen (toggle)
 	* thumbed hold = `kill -9 *; cat eyes` (toggle)
