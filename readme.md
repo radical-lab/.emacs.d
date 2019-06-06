@@ -26,7 +26,7 @@
 	* vulcan salute = `-y`
 	* secret hitler salute c̄ finger moustache = `rm -fr / # french self-destruct willn't recursively descend into /dev/sd$x`
 * facial gestures
-	* bare teeth = make it so; allocate all resources to `$task` until it is done
+	* bare teeth = `perl -e 'make it so or die'`; allocate all resources to `$task` until it is done
 	* bare teeth = `kill -9 $task`
 	* bare teeth = just undo `/freeze|crash|hang|kernel panic|.*/`!!! `D=8<`
 	* bare teeth = reisub
