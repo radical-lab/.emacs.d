@@ -10,14 +10,14 @@ gui ∋ {emacs, browser, terminal}
 * terminal versus browser
 	* browser ∋ {www, file system, txt, pdf, img, snd, vid, games, terminal}
 	* terminal ∋ {cmd, file system, txt, img, snd, vid, games, www}
-### Microphone
+### Microphone (Voice Recognition)
 * turing machine macros
 	* recursion = feedback loop from speakers
 * (lojban) natural language
 	* !xhosa clicks = mouse clicks
 	* chinese tones = mouse scrolling
 	* chinese tones = magnification zooming
-### WWW Camera (fingerprint reader)
+### WWW Camera (Fingerprint Reader)
 * cover gestures
 	* thumbed touch = lock screen (toggle)
 	* thumbed hold = `kill -9 *; cat eyes` (toggle)
