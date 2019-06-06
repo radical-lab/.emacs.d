@@ -50,7 +50,9 @@ gui ∋ {emacs, browser, terminal}
 * border patrol
 * microsoft product activation
 * gourmet menu
+* mousing
 ### Touch Pad (Mouse)
+* gaming
 ### The Future
 * `/motorcycle|space/` helmet
 	* bci; neurological exoskellington (intelligence amplification, augmented learning)
