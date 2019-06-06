@@ -37,6 +37,8 @@
 		* esdf is home sweet home
 * n-key rollover keyboard
 	* face plant = undo
+	* head banging = multiple undo
+	* head banging = play music
 ### Touch Screen (Tiling Window Manager)
 ### Touch Pad (Mouse)
 
