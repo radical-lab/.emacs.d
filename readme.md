@@ -23,7 +23,8 @@ the future
 	* visor `/(v|a)r/`
 	* pure O₂ c̄out any polluting contaminants (microplastics)
 	* the outside of the helmet will feature tridimensional james bond invisibility technology for multinterface (sic erat scriptum) allowing for multiple private conversations in person
-		* project head to multiple perspectives
+		* project head to multiple perspectives (external)
+		* project conversations from multiple perspectives (internal)
 		* directional speakers for binaural recording (external)
 		* directional sound from microphones (internal); the right (interference) pattern(s)'ll support lightsaber renderings
 * gloves, or even a full body suit (polygraph, exoskellington)
