@@ -46,6 +46,7 @@ gui ∋ {emacs, browser, terminal}
 ### Touch Screen (Tiling Window Manager)
 * zooming
 * scrolling
+* `/sw(i|ap)ping/`
 * border patrol
 * microsoft product activation
 * gourmet menu
