@@ -10,6 +10,22 @@ gui ∋ {emacs, browser, terminal}
 * terminal versus browser
 	* browser ∋ {www, file system, txt, pdf, img, snd, vid, games, terminal}
 	* terminal ∋ {cmd, file system, txt, img, snd, vid, games, www}
+the future
+* `/motorcycle|space/` helmet
+	* bci; intelligence amplification (neurological exoskellington)
+	* microphones
+	* speakers
+		* bone conduction
+		* headphones
+	* visor `/(v|a)r/`
+	* pure O₂ c̄out any polluting contaminants (microplastics)
+	* the outside of the helmet will feature tridimensional james bond invisibility technology for multinterface (sic erat scriptum)
+		* project head to multiple perspectives
+		* directional speakers for binaural recording (external)
+		* directional sound from microphones (internal)
+* gloves, or even a full body suit (polygraph, exoskellington)
+	* wetsuit versus drysuit
+	* super heroic lycra to the rescue!!! :D
 ### Microphone (Voice Recognition)
 * turing machine macros
 	* recursion = feedback loop from speakers
