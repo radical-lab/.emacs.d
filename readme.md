@@ -22,10 +22,10 @@ the future
 		* headphones
 	* visor `/(v|a)r/`
 	* pure O₂ c̄out any polluting contaminants (microplastics)
-	* the outside of the helmet will feature tridimensional james bond invisibility technology for multinterface (sic erat scriptum)
+	* the outside of the helmet will feature tridimensional james bond invisibility technology for multinterface (sic erat scriptum) allowing for multiple private conversations in person
 		* project head to multiple perspectives
 		* directional speakers for binaural recording (external)
-		* directional sound from microphones (internal)
+		* directional sound from microphones (internal); the right (interference) pattern(s)'ll support lightsaber renderings
 * gloves, or even a full body suit (polygraph, exoskellington)
 	* wetsuit versus drysuit
 	* super heroic lycra to the rescue!!! :D
