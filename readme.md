@@ -56,15 +56,15 @@ gui ∋ {emacs, browser, terminal}
 ### The Future
 * `/motorcycle|space/` helmet
 	* bci; neurological exoskellington (intelligence amplification, augmented learning)
-	* cameras
+	* cameras (input = photon particles)
 		* depth perception
-	* microphones
+	* microphones (input = sound waves)
 		* echolocation sonar (external)
 		* binaural voice recording (internal)
-	* speakers
+	* speakers (output = sound waves)
 		* bone conduction
 		* headphones
-	* visor `/(v|a)r/`
+	* visor `/(v|a)r/` (output = photon particles)
 	* pure O₂ c̄out any polluting contaminants (microplastics)
 	* the outside of the helmet will feature tridimensional james bond invisibility technology for multinterface (sic erat scriptum) allowing for multiple private conversations in person
 		* project head to multiple perspectives (external)
