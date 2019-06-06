@@ -10,6 +10,7 @@ gui ∋ {emacs, browser, terminal}
 * terminal versus browser
 	* browser ∋ {www, file system, txt, pdf, img, snd, vid, games, terminal}
 	* terminal ∋ {cmd, file system, txt, img, snd, vid, games, www}
+
 the future
 * `/motorcycle|space/` helmet
 	* bci; intelligence amplification (neurological exoskellington)
