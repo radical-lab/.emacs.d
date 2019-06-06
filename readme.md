@@ -40,6 +40,11 @@
 	* head banging = multiple undo
 	* head banging = play music
 ### Touch Screen (Tiling Window Manager)
+* zooming
+* scrolling
+* border patrol
+* microsoft product activation
+* gourmet menu
 ### Touch Pad (Mouse)
 
 ## hmm
