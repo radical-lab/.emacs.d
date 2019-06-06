@@ -14,6 +14,8 @@ gui ∋ {emacs, browser, terminal}
 the future
 * `/motorcycle|space/` helmet
 	* bci; intelligence amplification (neurological exoskellington)
+	* cameras
+		* depth perception
 	* microphones
 		* echolocation sonar (external)
 		* binaural voice recording (internal)
