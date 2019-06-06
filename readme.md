@@ -74,6 +74,9 @@ gui ∋ {emacs, browser, terminal}
 * faraday cage to protect from neurodegenerative cosmic rays and carcinogenic radi(ation)o waves
 	* all `/wifi|transmitters|transceivers|receivers|.*/` will be external
 	* `/photonic|audio|.*/` wireless technology is preferential
+* `/charging|refueling|.*/`
+	* O₂
+	* e⁻
 
 ## Hmm
 * Saints Row is Home Sweet Home!
