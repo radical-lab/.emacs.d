@@ -10,31 +10,6 @@ gui ∋ {emacs, browser, terminal}
 * terminal versus browser
 	* browser ∋ {www, file system, txt, pdf, img, snd, vid, games, terminal}
 	* terminal ∋ {cmd, file system, txt, img, snd, vid, games, www}
-
-the future
-* `/motorcycle|space/` helmet
-	* bci; neurological exoskellington (intelligence amplification, augmented learning)
-	* cameras
-		* depth perception
-	* microphones
-		* echolocation sonar (external)
-		* binaural voice recording (internal)
-	* speakers
-		* bone conduction
-		* headphones
-	* visor `/(v|a)r/`
-	* pure O₂ c̄out any polluting contaminants (microplastics)
-	* the outside of the helmet will feature tridimensional james bond invisibility technology for multinterface (sic erat scriptum) allowing for multiple private conversations in person
-		* project head to multiple perspectives (external)
-		* project conversations from multiple perspectives (internal)
-		* directional speakers for binaural recording (external); the right (interference) pattern(s)'ll support lightsaber renderings by crossing the streams
-		* directional sound from microphones (internal)
-* gloves, or even a full body suit (polygraph, exoskellington)
-	* wetsuit versus drysuit versus spacesuit
-	* super heroic lycra to the rescue!!! :D
-* faraday cage to protect from neurodegenerative cosmic rays and carcinogenic radi(ation)o waves
-	* all `/wifi|transmitters|transceivers|receivers|.*/` will be external
-	* `/photonic|audio|.*/` wireless technology is preferential
 ### Microphone (Voice Recognition)
 * turing machine macros
 	* recursion = feedback loop from speakers
@@ -75,6 +50,30 @@ the future
 * microsoft product activation
 * gourmet menu
 ### Touch Pad (Mouse)
+### the future
+* `/motorcycle|space/` helmet
+	* bci; neurological exoskellington (intelligence amplification, augmented learning)
+	* cameras
+		* depth perception
+	* microphones
+		* echolocation sonar (external)
+		* binaural voice recording (internal)
+	* speakers
+		* bone conduction
+		* headphones
+	* visor `/(v|a)r/`
+	* pure O₂ c̄out any polluting contaminants (microplastics)
+	* the outside of the helmet will feature tridimensional james bond invisibility technology for multinterface (sic erat scriptum) allowing for multiple private conversations in person
+		* project head to multiple perspectives (external)
+		* project conversations from multiple perspectives (internal)
+		* directional speakers for binaural recording (external); the right (interference) pattern(s)'ll support lightsaber renderings by crossing the streams
+		* directional sound from microphones (internal)
+* gloves, or even a full body suit (polygraph, exoskellington)
+	* wetsuit versus drysuit versus spacesuit
+	* super heroic lycra to the rescue!!! :D
+* faraday cage to protect from neurodegenerative cosmic rays and carcinogenic radi(ation)o waves
+	* all `/wifi|transmitters|transceivers|receivers|.*/` will be external
+	* `/photonic|audio|.*/` wireless technology is preferential
 
 ## hmm
 * Saints Row is Home Sweet Home!
