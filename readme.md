@@ -15,6 +15,8 @@ the future
 * `/motorcycle|space/` helmet
 	* bci; intelligence amplification (neurological exoskellington)
 	* microphones
+		* echolocation sonar (external)
+		* binaural voice recording (internal)
 	* speakers
 		* bone conduction
 		* headphones
