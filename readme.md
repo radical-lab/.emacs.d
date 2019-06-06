@@ -29,6 +29,8 @@ the future
 * gloves, or even a full body suit (polygraph, exoskellington)
 	* wetsuit versus drysuit versus spacesuit
 	* super heroic lycra to the rescue!!! :D
+* faraday cage to protect from neurodegenerative cosmic rays and carcinogenic radi(ation)o waves
+	* all `/wifi|transmitters|transceivers|receivers|.*/` will be external
 ### Microphone (Voice Recognition)
 * turing machine macros
 	* recursion = feedback loop from speakers
