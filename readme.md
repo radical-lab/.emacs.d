@@ -6,10 +6,10 @@
 *This needs a goodd word!* (sic erat scriptum)
 
 ## Computational Communication
-gui ∋ {emacs, browser, terminal}
+gui ⊃ {emacs, browser, terminal}
 * terminal versus browser
-	* browser ∋ {www, file system, txt, pdf, img, snd, vid, games, terminal}
-	* terminal ∋ {cmd, file system, txt, img, snd, vid, games, www}
+	* browser ⊃ {www, file system, txt, pdf, img, snd, vid, games, terminal}
+	* terminal ⊃ {cmd, file system, txt, img, snd, vid, games, www}
 ### Microphone (Voice Recognition)
 * turing machine macros
 	* recursion = feedback loop from speakers
