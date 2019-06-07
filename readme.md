@@ -9,7 +9,7 @@
 gui ⊃ {emacs, browser, terminal}
 * terminal versus browser
 	* browser ⊃ {www, file system, txt, pdf, img, snd, vid, games, terminal}
-	* terminal ⊃ {cmd, file system, txt, img, snd, vid, games, www}
+	* terminal ⊃ {cmd, file system, txt, img, snd, vid, games, browser}
 ### Microphone (Voice Recognition)
 * turing machine macros
 	* recursion = feedback loop from speakers
