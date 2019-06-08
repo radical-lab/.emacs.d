@@ -77,10 +77,10 @@ gui ⊃ {emacs, browser, terminal}
 * faraday cage to protect from neurodegenerative cosmic rays and carcinogenic radi(ation)o waves
 	* all `/wifi|transmitters|transceivers|receivers|.*/` will be external
 	* `/photonic|audio|.*/` wireless technology is preferential
-* `/charging|refueling|.*/`
+* `/recharging|refueling|.*/`
 	* O₂ (probably use `/algae|.*/` for portability)
 	* e⁻ (probably use `/bio(electromagnetical|kinetical|thermal|neural|spiritual|.*)|.*/` for portability)
-	* H₂O (probably use recycled drinking water from `/human waste|hair|skin|nails|oils|perspiration|spit|vomit|blood|snot|ear wax|body fat|tears|(bodily|reproductive|cerebrospinal) fluids|græy matter|stem cells|telomeres|.*/` for portability)
+	* H₂O (probably use recycled drinking water from `/human waste|hair|skin|nails|oils|perspiration|spit|vomit|blood|snot|ear wax|body fat|tears|(optical|bodily|reproductive|cerebrospinal) fluids|græy matter|stem cells|telomeres|.*/` for portability)
 
 ## Hmm
 * Saints Row is Home Sweet Home!
