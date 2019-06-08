@@ -79,7 +79,7 @@ gui ⊃ {emacs, browser, terminal}
 	* `/photonic|audio|.*/` wireless technology is preferential
 * `/charging|refueling|.*/`
 	* O₂ (probably use `/algae|.*/` for portability)
-	* e⁻ (probably use `/bio(electromagnetical|thermal|neural|spiritual|.*)|.*/` for portability)
+	* e⁻ (probably use `/bio(electromagnetical|kinetical|thermal|neural|spiritual|.*)|.*/` for portability)
 	* H₂O (probably use recycled drinking water from `/human waste|hair|skin|nails|oils|perspiration|spit|vomit|blood|snot|ear wax|body fat|tears|(bodily|reproductive|cerebrospinal) fluids|græy matter|stem cells|telomeres|.*/` for portability)
 
 ## Hmm
