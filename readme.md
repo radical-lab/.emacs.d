@@ -17,6 +17,8 @@ gui ⊃ {emacs, browser, terminal}
 	* !xhosa clicks = mouse clicks
 	* chinese tones = mouse scrolling
 	* chinese tones = magnification zooming
+	* tuvan throat singing = mouse scrolling
+	* tuvan throat singing = magnification zooming
 ### WWW Camera (Fingerprint Reader)
 * cover gestures
 	* thumbed touch = lock screen (toggle)
