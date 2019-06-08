@@ -65,7 +65,7 @@ gui ⊃ {emacs, browser, terminal}
 		* bone conduction
 		* headphones
 	* visor `/(v|a)r/` (output = photon particles)
-	* pure H₂O₂ c̄out any polluting contaminants (microplastics)
+	* pure `/(H₂)?O₂?/` c̄out any polluting contaminants (microplastics)
 	* the outside of the helmet will feature tridimensional james bond invisibility technology for multinterface (sic erat scriptum) allowing for multiple private conversations in person
 		* project simulated heads to multiple perspectives (external)
 		* project conversations from multiple perspectives (internal)
