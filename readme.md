@@ -79,7 +79,7 @@ gui ⊃ {emacs, browser, terminal}
 	* `/photonic|audio|.*/` wireless technology is preferential
 * `/charging|refueling|.*/`
 	* O₂ (probably use `/algae|.*/` for portability)
-	* e⁻ (probably use body temperature for portability)
+	* e⁻ (probably use `/bio(electromagnetical|thermal|neural|spiritual|.*)|.*/` for portability)
 
 ## Hmm
 * Saints Row is Home Sweet Home!
