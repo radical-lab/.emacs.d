@@ -69,7 +69,7 @@ gui ⊃ {emacs, browser, terminal}
 	* the outside of the helmet will feature tridimensional james bond invisibility technology for multinterface (sic erat scriptum) allowing for multiple private conversations in person
 		* project simulated heads to multiple perspectives (external)
 		* project conversations from multiple perspectives (internal)
-		* directional speakers for binaural recording (external); the right (interference) pattern(s)'ll support lightsaber renderings by crossing the streams
+		* directional speakers for binaural recording (external); the right (interference) pattern(s)'ll support lightsaber renderings by crossing the (interception) streams
 		* directional sound from microphones (internal)
 * gloves, or even a full body suit (polygraph, exoskellington)
 	* wetsuit versus drysuit versus spacesuit
