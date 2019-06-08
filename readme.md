@@ -80,7 +80,7 @@ gui ⊃ {emacs, browser, terminal}
 * `/charging|refueling|.*/`
 	* O₂ (probably use `/algae|.*/` for portability)
 	* e⁻ (probably use `/bio(electromagnetical|thermal|neural|spiritual|.*)|.*/` for portability)
-	* H₂O (probably use recycled drinking water from `/human waste|perspiration|.*/` for portability)
+	* H₂O (probably use recycled drinking water from `/human waste|perspiration|spit|vomit|snot|.*/` for portability)
 
 ## Hmm
 * Saints Row is Home Sweet Home!
