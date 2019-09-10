@@ -1,0 +1,278 @@
+https://www.gnu.org/software/emacs/tour/
+
+A GUIDED TOUR OF EMACS
+
+M-x gdb    ; gnu debugger
+M-x ediff  ; ¿emacs diff?
+M-x dired  ; directory editor
+M-x gnus   ; news, mail, rss,..
+M-x tetris ; gamification that doesn't support bnpf
+
+BEFORE WE GET STARTED…
+
+M-x ; invoking commands with keybindings
+
+C-h t ; tutorial
+
+M-: (info "(emacs)Using Region") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Using Region")'`
+
+C-h r ; manpages
+
+C-h C-h ; help
+
+THE POWER OF TEXT MANIPULATION
+
+M-x dired                                  ;          directory editor
+C-x C-q ; M-x wdired-change-to-wdired-mode ; editable directory editor
+C-x C-s                                    ; save
+M-% ; M-x query-replace                    ; search, and replace (using r-expressions? it looks like globbing)
+
+BASIC EDITING COMMANDS
+
+MOVING AROUND IN BUFFERS
+https://lmarburger.github.io/vim_vs_emacs/#14
+C-f ; ab[c]de = abc[d]e
+C-b ; ab[c]de = a[b]cde
+C-n ; \nabc\nd[e]f\nghi\n = \nabc\ndef\ng[h]i\n
+C-p ; \nabc\nd[e]f\nghi\n = \na[b]c\ndef\nghi\n
+C-a ; \n[[abcde]]\n = \n[a]bcde\n
+C-e ; \n[[abcde]]\n = \nabcd[e]\n
+M-f ; abc[[ def]] ghi = abc def[ ]ghi
+M-b ; abc d[[ef g]]hi jkl = abc [d]ef ghi jkl
+M-a ; WTF‽‽‽
+M-e ; WTF‽‽‽
+M-v ; page up   …patented by criminals: microsoft, timothy sellers, heather grantham, and joshua dersch
+C-v ; page down …patented by criminals: microsoft, timothy sellers, heather grantham, and joshua dersch
+M-< ; goto /^/
+M-> ; goto /$/
+/C-u \d* ./ ; repetition
+/M-\d* ./   ; /C-u \d* ./
+/(C-u)* ./  ; (λx./C-u 4ˣ ./)
+M-g g ; goto loc
+C-s   ; incremental search forward
+C-r   ; incremental search backward
+
+MARK
+C-x C-x   ; swap mark, and /cursor|point/
+/C-\s/    ; set mark at /cursor|point/, and /select|highlight/ /selection|region/
+/M-(<|>)/ ; set mark at /cursor|point/ before goto /^|$/
+/C-(s|r)/ ; set mark at /cursor|point/ before searching
+; idk what these ones even mean, but idk C-y
+yank text               ; set mark at the beginning of the yanked region
+insert a buffer or file ; the beginning of the inserted text
+; the mark ring only has 16 marks
+/C-u C-\s/ ; cycle through mark ring
+
+REGION
+; region = mark + /cursor|point/
+C-x h ; make region contain the entire buffer (select all)
+M-h   ; make region contain the current paragraph
+; other commands helpfully set the region as part of what they do.
+; C-y (yank), inserting a file, and inserting a buffer all set the region to surround the inserted text.
+; narrowing = zoom
+; beginning-of-buffer
+; end-of-buffer
+C-x n n ; zoom in region
+C-x n w ; zoom out region
+M-: (info "(emacs)Narrowing") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Narrowing")'`
+
+KILLING ("CUTTING") TEXT
+C-k ; kill rest of line to /kill|yank/ ring
+/C-u \d* C-k/ ; kill rest of line(s)
+C-w ; cut  region to /kill|yank/ ring
+M-w ; copy region to /kill|yank/ ring
+M-d ; kill rest of word
+M-k ; kill rest of sentence
+
+YANKING ("PASTING") TEXT
+C-y          ; yank off the top of the /kill|yank/ ring
+/C-y (M-y)*/ ; cycle through /kill|yank/ ring
+; clipboard is a stupid word too
+
+UNDO
+C-/   ; undo
+C-_   ; undo
+C-x u ; undo
+M-: (info "(emacs)Undo") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Undo")'`
+; THEY SHOULD MENTION TOGGLE /UNDO|REDO/: C-g
+
+INCREMENTAL SEARCH
+/C-(r|s)/ ; bidirectional incremental search
+	 C-g ; goto presearch position (C-x C-x)
+	 C-s ; next
+	 \r  ; goto postsearch position (also almost any movement instruction)
+/C-(r|s) C-(r|s)/ ; /re.*/ last search effort
+/C-(r|s) M-p/     ; cycle search history backwards
+/C-(r|s) M-n/     ; cycle search history forwards
+/C-h k C-(r|s)/   ; guide to more commands available in incremental search
+M-: (info "(emacs)Incremental Search") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Incremental Search")'`
+
+SEARCH AND REPLACEMENT
+M-% ; (info "(emacs)Query Replace")
+   y ; /yes|replace/
+   n ; /next|skip/
+   q ; /quit|escape/
+   . ; /yq/
+   ! ; /y*/
+   ? ; guide
+
+REGULAR EXPRESSION SEARCH
+C-M-s ; r-expression incremental search
+M-: (info "(emacs)Regexps") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Regexps")'`
+M-x re-builder ; If you're new to regexps, or you are constructing a particularly complicated regexp, you can use the regexp builder (M-x re-builder). This command pops up a separate window in which you can test out your regexp, and any matches in your original buffer will get highlighted as you edit your regexp.
+M-x occur ; Instead of jumping through matches one by one, you can also choose to display them all at once. M-x occur prompts you for a regular expression, then displays in a separate buffer a list of all lines in the current buffer which match that regexp (as well as their line numbers). Clicking on any occurrence takes you to that line in the buffer.
+
+REGULAR EXPRESSION SEARCH AND REPLACEMENT
+\& ; original matching text
+\d ; nᵗʰ group
+\# ; n substitutions
+\? ; prompt substitution input each match
+\,(lisp-expression …) ; substitutional preprocessing
+M-x replace-regexp /\(\w+\) \(\w+\)/\,(upcase \2), \1/ ; First_name Last_name = LAST_NAME, First_name
+
+KEYBOARD MACROS
+http://ergoemacs.org/emacs/emacs_macro_example.html
+F3 ; start recording macro
+F4 ; stop recording macro
+F4 ; play back macro once
+/M-\d* F4/ ; replay macro n times
+/M-0 F4/   ; replay macro indefinitely #eternal_youth
+M-d C-d M-u , [SPC] C-y C-n C-a ; M-x replace-regexp /\(\w+\) \(\w+\)/\,(upcase \2), \1/ ; First_name Last_name = LAST_NAME, First_name
+M-: (info "(emacs)Keyboard Macros") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Keyboard Macros")'`
+
+HELP WITH COMMANDS
+
+C-h k ; Shows documentation for the command associated with any particular key.
+	 C-h k C-s ; exempli gratia (incremental search)
+C-h f ; Shows documentation for any particular command, by name (i.e. what you would type after M-x).
+	 C-h f isearch-forward ; exempli gratia (incremental search)
+; documentation includes full name of instruction (C-h f), key bindings (C-h k), and description; examples? they could be generated…
+C-h a ; apropos search by /keywords|r-expressions/
+	 C-h a narrow ; exempli gratia (M-x narrow-to-region)
+
+MORE USEFUL FEATURES
+
+INTEGRATION WITH COMMON TOOLS
+M-x shell          ; *shell*
+C-u M-x shell      ; *named buffer*
+M-x compile        ; `make`
+M-x gdb            ; `gdb`
+M-x grep           ; `grep`
+M-x man            ; `man`
+M-x calculator     ; a simple calculator (but *scratch* is elisp)
+M-x calendar       ; a calendar
+M-x phases-of-moon ; shows upcoming quarters of the moon
+
+INVOKING SHELL COMMANDS
+M-! ; M-x shell-command           ; executes a command                                       ; displays the output in a new buffer
+M-| ; M-x shell-command-on-region ; executes a command, piping in the current region as input; displays the output in a new buffer
+/C-u M-(!|\|)/ ; insert the output in your current buffer rather than using a temporary buffer
+
+VERSION CONTROL
+; Emacs supports CVS, Subversion, bzr, git, hg, and other systems, but it offers a uniform interface, called VC, regardless of the version control system you are using.
+; Emacs automatically detects when a file you're editing is under version control, and displays something like this in the mode line: CVS-1.14 to indicate the version control system in use, and the current version.
+C-x v v ; M-x vc-next-action ; commits the current file (prompting you for a log message) if you've modified it. (Under version control systems that require locking, this command also acquires a lock for you.)
+VC provides other commands for version control-related tasks:
+	C-x v = ; Displays a diff showing the changes you've made to the current file.
+	C-x v ~ ; Prompts you for a version number and shows you that version of the current file in another window.
+	C-x v g ; Displays an annotated version of the file showing, for each line, the commit where that line was last changed and by whom. On any line you can press L to view the log message for that commit or D to view the associated diff.
+	; ^ i think that one is `blame` github ^
+	C-x v l ; Displays a log of previous changes to the file. When the cursor is on a particular log entry, you can press d to view the diff associated with that change or f to view that version of the file.
+M-: (info "(emacs)Version Control") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Version Control")'`
+; Some special features are enabled when you are looking at a diff (whether from a file, or one produced by VC). Emacs lets you move around in a diff by hunks or files, apply individual hunks to a file, reverse a diff, and do other operations useful for reading or manually editing diffs.
+M-: (info "(emacs)Diff Mode") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Diff Mode")'`
+
+EDITING REMOTE FILES
+; Emacs can edit remote files transparently (as if they were local) using a feature called Tramp. Whenever Emacs asks for a file, you can indicate a remote file like so: /myname@remotehost:/remote/path/to/file. Emacs retrieves the file over SSH, FTP, or another method and takes care of saving it when you're done. With Tramp you can edit files on different computers using a single Emacs session, even if Emacs is not installed on the remote side.
+; You can also use Tramp to edit local files with another user's permissions. You can edit files with root privileges via sudo: /sudo::/etc/file, or via su: /root@localhost:/etc/file.
+M-: (info "(TRAMP)") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(TRAMP)")'`
+
+EMACS SERVER
+; Some people like to keep only a single instance of Emacs open and edit all their files in there. Doing this has a few advantages:
+	; You can kill/yank text between buffers in the same instance of Emacs.
+	; Emacs remembers argument histories (what commands you've used, what files you've opened, terms you've searched for, etc.), but only within each instance.
+	; If you have many customizations, starting new instances of Emacs is slow.
+; Alas, when you type emacs in a shell to edit a file (or when $EDITOR is invoked by an external program), a new instance of Emacs is started. You can avoid this by using emacsclient, which instead opens a new frame connected to an existing instance of Emacs:
+	; In your existing instance of Emacs, type M-x server-start. Or add (server-start) to your .emacs file to make it do that automatically at startup.
+	; To edit a file, type emacsclient -t FILENAME at a prompt. You can also change your $EDITOR to emacsclient -t if you're using programs that automatically invoke $EDITOR. (emacsclient -t opens a new frame on the terminal; alternatively, emacsclient -c opens a new X frame.)
+	; When you're done editing, type C-x C-c, which closes the frame.
+M-: (info "(emacs)Emacs Server") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Emacs Server")'`
+
+BEING UNPRODUCTIVE WITH EMACS
+M-x tetris ; tetris
+M-x hanoi  ; towers of hanoi game
+M-x doctor ; emacs psychotherapist
+
+COMMON EMACS CONCEPTS
+
+PREFIX ARGUMENTS
+/C-u \d* ./   ; repetition
+/M-\d* ./     ; /C-u \d* ./
+/(C-u)* ./    ; (λx./C-u 4ˣ ./)
+M-x shell     ; *shell*
+C-u M-x shell ; *named buffer*
+M-: (info "(emacs)Arguments") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Arguments")'`
+
+MAJOR MODES
+M-x dired
+M-x compile
+M-x shell
+M-x java-mode
+M-x python-mode
+M-x text-mode
+M-x fundamental-mode ; no specialisations at all
+M-x prolog-mode ; emacs is not very good at determining the right mode (ctfs = check the fucking shebang)
+; Lisp = "Manipulate s-exps in various ways; execute expressions" (interesting)C-j
+; http://www.emacswiki.org/
+M-: (info "(emacs)Major Modes") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Major Modes")'`
+
+MINOR MODES
+M-x auto-fill-mode ; Wraps your lines automatically when they get longer than 70 characters.
+M-x flyspell-mode  ; Highlights misspelled words as you type.
+M-x follow-mode    ; If you have a buffer displayed in two windows side by side, follow-mode forces them to scroll together such that the text displayed in the second window comes right after the text in the first window, and moving your cursor off the bottom of the left window causes it to appear at the top of the right window
+; Some minor modes are global, i.e. they affect the behavior of the entire editor, rather than just that of a specific buffer.
+M-x icomplete-mode ; In the M-x prompt (and elsewhere), show completions as you type
+M-x iswitchb-mode  ; Show all buffer names when you switch buffers with C-x b
+M-: (info "(emacs)Minor Modes") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Minor Modes")'`
+; If you need help with a particular mode, C-h m describes the active major and minor modes. The mode description often lists important commands which are useful in that mode, which is helpful when you're learning to use a new mode.
+
+THE MINIBUFFER
+; The minibuffer (the space at the bottom of the frame) is where Emacs prompts you for input in most situations: for a command, when you type M-x; for a file name, within M-x find-file; for an Elisp expression, within M-x eval-expression, etc. Here are some features common to most minibuffer prompts:
+	; You can use most buffer editing and movement commands. You can move around in, kill text from, and yank text to minibuffers.
+	; You can browse previous inputs to the current prompt using M-p and M-n.
+	; Tab completion is often available. For example, the M-x prompt offers tab completion, so you needn't worry about typing long command names like M-x wdired-change-to-wdired-mode when M-x wdired-ch TAB suffices.
+
+TIPS FOR BEGINNERS
+
+IN THE EVENT OF AN EMERGENCY…
+; Here's what to do if you've accidentally pressed a wrong key:
+	; If you executed a command and Emacs has modified your buffer, use C-/ to undo that change.
+	; If you pressed a prefix key (e.g. C-x) or you invoked a command which is now prompting you for input (e.g. Find file: …), type C-g, repeatedly if necessary, to cancel.
+; C-g also cancels a long-running operation if it appears that Emacs has frozen.
+
+KEYBOARD AND TERMINAL SETUP
+; Some Emacs users remap their Caps Lock key to act as an additional Ctrl key, because it is easier to reach. See instructions for moving Ctrl.
+	; https://www.emacswiki.org/emacs/MovingTheCtrlKey
+; Due to your keyboard or terminal configuration, you may find that some keys seem to do the wrong thing:
+; If your DEL key is not working (sometimes, typing DEL brings up a help screen, as if you typed C-h), try M-x normal-erase-is-backspace-mode.
+; If your meta key is not working, in order to type a key that contains meta, you can instead type ESC, then the remaining keys. For example, ESC x is the same as M-x, and ESC C-s is the same as C-M-s.
+
+FREQUENTLY ASKED QUESTIONS
+C-h C-f ; explains how to perform many commonly requested tasks
+
+MIGRATING TO EMACS
+
+EMACS FOR WINDOWS USERS
+M-: (look "ℝOS!") ; http://dilbert.com/strip/1995-11-09
+C-h f cua-mode ; this has no"-thing" to do with windows
+
+EMACS FOR VI/VIM USERS
+M-x viper-mode
+M-: (info "(viper)") ; `printf \\ec;emacs -nw --no-splash --eval='(info "(viper)")'`
+
+EMACS RESOURCES
+C-h r   ; http://www.gnu.org/software/emacs/manual/emacs.html
+C-h i d ; http://www.gnu.org/software/emacs/manual/
+C-h C-f ; http://www.gnu.org/software/emacs/manual/efaq.html
+; http://www.emacswiki.org/
+; http://lists.gnu.org/mailman/listinfo/help-gnu-emacs
