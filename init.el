@@ -52,9 +52,14 @@
 
 ; i feel like i should just start from scratch; indentation is a universal concept, and should use \t for obvious reasons (like using -nw)
 ; it should be \t by default, but configurable for idiocracy
+; i am thinking about using 108 spaces just to demonstrate how stupid spaces are for indentation; read 108 indentation spaces, display 3 indentation spaces, write 36 indentation spaces for every displayed indentation space; spaces versus tabs is not a valid argument; only /(air|space)heads/ use spaces; tables are denser than air; tables actually have density; i live in a postapocalyptic dystopian world, woe is them
 ; prolog(prolog, Self_hosting) -> prolog(shyamscript, EMACS_core) -> configurable virtual machine -> window manager
 ; i don't want to backtrack in an emacs system (c̄out intelligence amplification)
 
 ; is there a way to use emacs as the clipboard? not even transferring between them; make them one, and the same
+; drop down to choose emacs instances, but x /copy|cut/ into all emacs instances; including choosing history from a specific emacs instance
+; does emacs support communication between instances? can i ssh between them?
+
+; how do i edit help pages?
 
 ; EOF

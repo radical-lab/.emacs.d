@@ -1,6 +1,7 @@
 printf \\ec;emacs -nw --no-splash --eval='(info "info")'
 
-/C-\s (M-f|C-n)* C-g/ ; attentive reading
+/? \s*/ ; help
+/C-\s (M-f|C-n)* C-g/ ; attentive reading (/shifted|controlled/ arrows also work, but it might not be emacs)
 
 ; Info file /info-stnd|texinfo/ does not exist.
 
@@ -25,8 +26,7 @@ n ; next a node
 p ; prev a node
 u ; up   a node
 
-C-l ; redraw
-C-L ; redraw
+/C-(l|L)/ ; redraw, and cycle through vertical alignment
 
 ? ; help
 H ; help (split screens)
