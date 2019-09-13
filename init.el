@@ -61,6 +61,6 @@
 ; does emacs support communication between instances? can i ssh between them?
 ; each emacs instance can use a fork to /read|write/ clipboard files; the system clipboard can /read|write/ the emacs clipboard files; emacs instances load system clipboard file
 
-; how do i edit help pages?
+; how do i edit help pages? remap the keybinding
 
 ; EOF
