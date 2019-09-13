@@ -1,3 +1,7 @@
+; I started learning Emacs, the Elisp Machine Accumulating C Supplements, so I can do FP while hacking any language (including the dysfunctional ones). I think it's easier to sell ((lisp)) as an extra curvy superspecies of python() with its' large intestine gutted; it even "loops" too! "List Processor" is the binomial nomenclature. Erasing Minds Allows Complete Submission but is Generally Not Used… Lisp Is Symbolic Programming!!! :D
+
+; this is my plan: agtoe -> info -> (emacs tute, elisp intro) -> (emacs man, elisp man)
+
 ; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
 ; ¿who needs backups when you can just `C-x s` every second?
 ; ¡this is the number one reason why i kept using vim; free me from this beast of burden!
@@ -32,7 +36,25 @@
 (setq mode-require-final-newline nil); if some"-thing" doesn't work: first try `cp cfg/.emacs.d/init.el ~/.emacs.d/init.el`
 
 ; /^;[^;]/ is not the Elisp way ∵ *scratch* only has /^;;/, and there's some esoteric law about /[^;];[^;]/ only being inlined after an instruction, reminiscent of the syntax of C; 'tis the UNIX way, reminding us the Elisp Machine Accumulates C Supplements
-(setq electric-indent-mode nil)
+;(electric-indent-mode -1)
 ; ERR: goto `emacs -Q -nw`, type ";\t", and it indents the semicolon (alot)
+
+; http://ergoemacs.org/emacs/emacs_tabs_space_indentation_setup.html
+;(defun my-insert-tab-char ()
+;	"Insert a tab char. (ASCII 9, \t)"
+;	(interactive)
+;	(insert "\t"))
+;(global-set-key (kbd "TAB") 'my-insert-tab-char) ; same as Ctrl+i
+
+; who knew the cost of freedom would be so expensive?
+;(setq-default indent-tabs-mode t)
+; ERR: \t = \s\s\s in *scratch*
+
+; i feel like i should just start from scratch; indentation is a universal concept, and should use \t for obvious reasons (like using -nw)
+; it should be \t by default, but configurable for idiocracy
+; prolog(prolog, Self_hosting) -> prolog(shyamscript, EMACS_core) -> configurable virtual machine -> window manager
+; i don't want to backtrack in an emacs system (c̄out intelligence amplification)
+
+; is there a way to use emacs as the clipboard? not even transferring between them; make them one, and the same
 
 ; EOF

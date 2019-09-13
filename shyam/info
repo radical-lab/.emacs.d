@@ -1,0 +1,61 @@
+printf \\ec;emacs -nw --no-splash --eval='(info "info")'
+
+/C-\s (M-f|C-n)* C-g/ ; attentive reading
+
+; Info file /info-stnd|texinfo/ does not exist.
+
+INFO: AN INTRODUCTION
+
+h  ; programmed instruction sequence
+nn ; advanced info commands, skipping over the getting started chapter
+?  ; summary of all available commands in emacs
+H  ; summary of all available commands in info
+
+GETTING STARTED: GETTING STARTED
+
+; linear sequence
+[  ; skip   up
+\b ; scroll up
+ b ; beginning (goto Top; do not $croll back to the future)
+\s ; scroll down
+]  ; skip   down
+
+; branching structure
+n ; next a node
+p ; prev a node
+u ; up   a node
+
+C-l ; redraw
+C-L ; redraw
+
+? ; help
+H ; help (split screens)
+
+; 1.4: Terminal dimensions are known ∴ you can warn users about large nodes ∵ no"-thing" is impossible!
+
+M-x visible-mode ; toggle invisible ink
+(setq Info-hide-note-references nil) ; no invisible ink
+
+m "name a node" ; iff there is a menu of hyperlinked nodes     (au\tocomple\te is at your friendly disposal, or C-g)
+f "name a node" ; iff there are hyperlinked cross references   (au\tocomple\te is at your friendly disposal, or C-g)
+i "name a node" ; iff there are hyperlinked indices #tautology (au\tocomple\te is at your friendly disposal, or C-g)
+m ? ; m \t      ; list menu
+f ? ; f \t      ; list cross references
+i ? ; i \t      ; list indices of the index node
+/((S-)?\t)*\r/  ; bidirectionally cycle through menus, and cross references, then goto the hyperlinked node
+M-\t            ; WINDOW MANAGER TABBING BETWEEN WINDOW FRAMES
+
+l ; return from logged hyperlinking (hyperspacial \escape velocity) (they use hyperlogging for human subject research) (l is for last)
+r ; Info-history-forward (r is for revisit hyperlogs)
+L ; Info-history (goto hyperlog node)
+d ; Info-directory (goto directory node)
+t ; Info-top-node (goto top node)
+; directory node -> top node
+
+q ; Info-exit (q is for quit but means \escape)
+
+ADVANCED INFO COMMANDS
+
+/C-q \??/ ; INFO IS READ ONLY, SO I DON'T UNDERSTAND ANY OF THIS (MAYBE IT IS JUST TOO ADVANCED, SO EARLY ON, FOR MY BELITTLED BRAIN #NEUROPLASTICITY)
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(info)Search Text")'
