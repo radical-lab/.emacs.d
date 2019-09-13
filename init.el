@@ -59,6 +59,7 @@
 ; is there a way to use emacs as the clipboard? not even transferring between them; make them one, and the same
 ; drop down to choose emacs instances, but x /copy|cut/ into all emacs instances; including choosing history from a specific emacs instance
 ; does emacs support communication between instances? can i ssh between them?
+; each emacs instance can use a fork to /read|write/ clipboard files; the system clipboard can /read|write/ the emacs clipboard files; emacs instances load system clipboard file
 
 ; how do i edit help pages?
 
