@@ -61,6 +61,38 @@
 ; does emacs support communication between instances? can i ssh between them?
 ; each emacs instance can use a fork to /read|write/ clipboard files; the system clipboard can /read|write/ the emacs clipboard files; emacs instances load system clipboard file
 
-; how do i edit help pages? remap the keybinding
+; http://ergoemacs.org/emacs/elisp_read_file_content.html
+(defun get-string-from-file (filePath)
+  "Return filePath's file content."
+  (with-temp-buffer
+	 (insert-file-contents filePath)
+	 (buffer-string)))
+
+; how do i edit help pages? remap the keybinding…or not
+; https://stackoverflow.com/a/15725437
+(eval-after-load "info"
+  '(defun Info-summary ()
+	  "Display a brief summary of all Info commands."
+	  (interactive)
+	  (save-window-excursion
+		 (switch-to-buffer "*Help*")
+		 (setq buffer-read-only nil)
+		 (erase-buffer)
+		 ;(insert (documentation 'Info-mode))
+		 (insert (substitute-command-keys (get-string-from-file (file-truename "~/.emacs.d/help_info.txt"))))
+		 (help-mode)
+		 (goto-char (point-min))
+		 (let (ch flag)
+			(while (progn (setq flag (not (pos-visible-in-window-p (point-max))))
+							  (message (if flag "Type Space to see more"
+											 "Type Space to return to Info"))
+							  (if (not (eq ?\s (setq ch (read-event))))
+									(progn (push ch unread-command-events) nil)
+								 flag))
+			  (scroll-up)))
+		 (bury-buffer "*Help*"))))
+; undocumented features #default
+; \[function] = key ; help_info.txt
+; M-: (progn (find-file "/usr/local/share/emacs/26.1/lisp/info.el.gz") (search-forward "(defvar Info-mode-map"))
 
 ; EOF

@@ -1,0 +1,39 @@
+\<Info-mode-map>\s seems to be the only way to navigate this `more`, or less… (? ; goto Top)
+
+? ; help
+H ; help (split screens)
+
+\[Info-exit] ; Info-exit (q is for quit but means \escape info; not just this help)
+
+; linear sequence navigation
+\[Info-backward-node]  ; skip   up
+\b ; scroll up
+\s ; scroll down
+\[Info-forward-node]  ; skip   down
+
+; branching structure navigation
+ \[Info-next]     ; next a node
+ \[Info-prev]     ; prev a node
+/u|\\[Info-up]/ ; up   a node
+
+m "name a node" ; iff there is a menu of hyperlinked nodes     (au\tocomple\te is at your friendly disposal, or C-g)
+f "name a node" ; iff there are hyperlinked cross references   (au\tocomple\te is at your friendly disposal, or C-g)
+i "name a node" ; iff there are hyperlinked indices #tautology (au\tocomple\te is at your friendly disposal, or C-g)
+m ? ; m \t      ; list menu
+f ? ; f \t      ; list cross references
+i ? ; i \t      ; list indices of the index node
+/((S-)?\t)*\r/  ; bidirectionally cycle through menus, and cross references, then goto the hyperlinked node
+M-\t            ; WINDOW MANAGER TABBING BETWEEN WINDOW FRAMES
+
+l ; return from logged hyperlinking (hyperspacial \escape velocity) (they use hyperlogging for human subject research) (l is for last)
+r ; Info-history-forward (r is for revisit hyperlogs)
+L ; Info-history (goto hyperlog node)
+d ; Info-directory (goto directory node)
+t ; Info-top-node (goto top node)
+; directory node -> top node
+
+/C-(l|L)/ ; redraw, and cycle through vertical alignment
+/M-(<|>)/ ; \[beginning-of-buffer]
+
+M-x visible-mode ; toggle invisible ink
+(setq Info-hide-note-references nil) ; no invisible ink
