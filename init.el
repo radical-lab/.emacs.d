@@ -94,5 +94,9 @@
 ; undocumented features #default
 ; \[function] = key ; help_info.txt
 ; M-: (progn (find-file "/usr/local/share/emacs/26.1/lisp/info.el.gz") (search-forward "(defvar Info-mode-map"))
+;
+; this is not the way∘lisp! https://stackoverflow.com/q/22224045
+; is this official gnu? i can't find it anywhere else… https://rocky.github.io/elisp-bytecode.pdf
+; this is not disassembly! https://www.gnu.org/software/emacs/manual/html_node/elisp/Disassembly.html#Disassembly
 
 ; EOF
