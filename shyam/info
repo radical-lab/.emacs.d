@@ -58,4 +58,39 @@ ADVANCED INFO COMMANDS
 
 /C-q \??/ ; INFO IS READ ONLY, SO I DON'T UNDERSTAND ANY OF THIS (MAYBE IT IS JUST TOO ADVANCED, SO EARLY ON, FOR MY BELITTLED BRAIN #NEUROPLASTICITY)
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(info)Search Text")'
+s "pattern" C-m ; search pattern across all nodes
+s C-m ; repeat search
+C-s ; consistency is preferable
+C-r ; consistency is preferable
+(setq Info-isearch-search nil) ; C-s wraps nodes instead of manuals (C-r)
+
+i "name a node" C-m ; searching the index is recommended before searching the rest of the manual #duplication
+, ; repeat search @index
+I ; Info-virtual-index ; constructs a virtual info node displaying the results of an index search, making it easier to select the one you want
+M-x info-apropos ; M-x index-apropos ; prompts for a string and then looks up that string in all the indices of all the Info documents installed on your system
+
+g "name a node" C-m ; goto node (au\tocomple\te is at your friendly disposal, or C-g)
+g "(name a file)name a node" C-m ; goto node in file (au\tocomple\te is at your friendly disposal, or C-g)
+
+/[123456789]/ ; nᵗʰ menu hyperlink
+
+M-n         ; clone-buffer
+/C-u (m|g)/ ; new Info buffer which they select in another window
+C-u 2 C-h i ; switches to the buffer *info*<2>, creating it if necessary
+M-x info-display-manual ; show an Info manual by name, reusing an existing buffer if there is one (When given a prefix argument, this command limits the completion alternatives to currently visited info files, thus giving a convenient way to switch between several manuals)
+
+; printf \\ec;emacs -nw --no-splash --eval='(info "(info)Emacs Info Variables")'
+Info-directory-list            ; INFOPATH (environment variable), Info-default-directory-list
+Info-additional-directory-list ; A list of additional directories to search for Info documentation files
+Info-mode-hook                 ; Hooks run when ‘Info-mode’ is called; turn-on-font-lock (M-x customize-face C-m FACE C-m; info-node, info-xref, info-xref-visited, info-header-xref, info-header-node, info-menu-header, info-menu-star, info-title-N (where N is the level of the section, a number between 1 and 4))
+Info-fontify-maximum-menu-size ; Maximum size of menu to fontify if font-lock-mode isn't nil
+Info-fontify-visited-nodes     ; If not nil, menu items and cross-references pointing to visited nodes are displayed in the info-xref-visited face
+Info-use-header-line           ; If not nil, Emacs puts in the Info buffer a header line showing the Next, Prev, and Up links. A header line does not scroll with the rest of the buffer, making these links always visible. HACK NIL FOR "(file)Top > Node > Prev, \textbf{Subnode}, Next"
+Info-hide-note-references      ; nil = no invisible text, t = invisible text, neither produces an intermediate behavior, hiding a limited amount of text, but showing all text that could potentially be useful
+Info-scroll-prefer-subnodes    ; If set to a non-‘nil’ value, <SPC> and <BACKSPACE> (or <DEL>, or ‘S-<SPC>’) keys in a menu visit subnodes of the current node before scrolling to its end or beginning, respectively. For example, if the node’s menu appears on the screen, the next <SPC> moves to a subnode indicated by the following menu item. Setting this option to ‘nil’ results in behavior similar to the stand-alone Info reader program, which visits the first subnode from the menu only when you hit the end of the current node. The default is ‘nil’.
+Info-isearch-search            ; If not nil, isearch in Info searches through multiple nodes
+Info-enable-active-nodes       ; If not nil, allows Info to execute Lisp code associated with nodes. The Lisp code is executed when the node is selected. The Lisp code to be executed should follow the node delimiter (the DEL character) and an "execute: " tag, like this: ^_execute: (message "This is an active node!")
+
+FURTHER READING
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(info)Further Reading")'

@@ -39,8 +39,8 @@ C-a ; \n[[abcde]]\n = \n[a]bcde\n
 C-e ; \n[[abcde]]\n = \nabcd[e]\n
 M-f ; abc[[ def]] ghi = abc def[ ]ghi
 M-b ; abc d[[ef g]]hi jkl = abc [d]ef ghi jkl
-M-a ; WTF‽‽‽
-M-e ; WTF‽‽‽
+M-a ; WTF‽‽‽ …default emacs uses /\.(\s\s.)?/ (usa english?) for sentences instead of /\.(\s.)?/ (english english)
+M-e ; WTF‽‽‽ …default emacs uses /\.(\s\s.)?/ (usa english?) for sentences instead of /\.(\s.)?/ (english english)
 M-v ; page up   …patented by criminals: microsoft, timothy sellers, heather grantham, and joshua dersch
 C-v ; page down …patented by criminals: microsoft, timothy sellers, heather grantham, and joshua dersch
 M-< ; goto /^/
