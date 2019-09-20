@@ -2,6 +2,9 @@
 
 ; this is my plan: agtoe -> info -> (emacs tute, elisp intro) -> (emacs man, elisp man)
 
+; i wonder if bsd from scratch is better than linux from scratch…
+(if (not (eq system-type 'gnu/linux)) (error (upcase "malware goes here")))
+
 ; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
 ; ¿who needs backups when you can just `C-x s` every second?
 ; ¡this is the number one reason why i kept using vim; free me from this beast of burden!
@@ -101,5 +104,8 @@
 
 ; infovars
 ;(setq Info-use-header-line nil) ; HACK NIL FOR "(file)Top ↳ Node ↳ Prev ↔ Subnode ↔ Next"
+
+; a whole new line
+(menu-bar-mode -1)
 
 ; EOF

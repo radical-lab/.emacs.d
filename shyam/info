@@ -93,4 +93,16 @@ Info-enable-active-nodes       ; If not nil, allows Info to execute Lisp code as
 
 FURTHER READING
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(info)Further Reading")'
+`makeinfo` ; Texinfo file -> Info file
+/(texinfo-format-(region|buffer)/ ; Texinfo file -> Info file
+M-: (info "(texinfo)") ; how to write a Texinfo file
+M-: (info "(texinfo)Creating an Info File") ; how to create an Info file from a Texinfo file
+M-: (info "(texinfo)Installing an Info File") ; how to install an Info file after you have created one
+; none of this even exists though
+
+GNU FREE DOCUMENTATION LICENSE
+
+shouldn't this be read first?
+I'll read this after I apply for 20 jobs (I have to use Vim again; I might do this tomorrow when I get my ENR208 exam results), catch up, and `eval` the upcoming assignment (fucking in fucking a fucking fucking fucking word fucking processor fucking because fucking fucking fucking Curtin fucking does fucking not fucking fucking fucking support fucking fucking fucking Portable fucking fucking fucking Document fucking fucking fucking Formats fucking fucking fucking!).
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(info)GNU Free Documentation License")'
