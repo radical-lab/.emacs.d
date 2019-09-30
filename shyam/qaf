@@ -1,0 +1,27 @@
+serious(programming) :- fix(indentation). % emacs from scratch would be better, but i don't want to do it more than once
+
+https://www.google.com/search?q=emacs+indent+region
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Multi_002dline-Indent.html
+https://stackoverflow.com/questions/11713743/indent-several-lines-in-emacs
+https://www.google.com/search?q=emacs+indent+region+by+tabs
+https://emacs.stackexchange.com/a/9469
+C-x r t C-u /\d*/ \t C-m ; iprefer more /general|ultimate/ answers to life, the multiverse, and every"-thing" (and tabulated indentations)
+
+C-U /\d+/ ; unicode mode (C-g doesn't work! So it's not Emacs, but I'm not sure about controlled arrows)
+
+/(C-)?S-(←|↓|↑|→)/ ; select region between mark, and point (highlighted, but not the same as terminal selection; co-existence is supported)
+
+https://vim.fandom.com/wiki/Uniq_-_Removing_duplicate_lines
+%s/\v^(.*)(\n\1)+$/\1/
+https://www.google.com/search?q=emacs+delete+duplicate+lines
+https://www.emacswiki.org/emacs/DuplicateLines#toc1
+C-u C-u M-x delete-duplicate-lines ; region must include duplicate text \n[zombie\nzomie]\n
+
+emacs cut, and copy, region? i will just paste it back instead of learning copy region, since C-k is more useful than C-a C-k (vims' double ds)
+https://www.google.com/search?q=emacs+kill+region
+https://www.gnu.org/software/emacs/manual/html_node/eintr/kill_002dregion.html
+https://www.gnu.org/software/emacs/manual/html_node/eintr/Complete-kill_002dregion.html
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Other-Kill-Commands.html
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Using-Region.html
+C-w ; kill region
+M-w ; C-w C-y

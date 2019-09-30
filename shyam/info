@@ -103,6 +103,10 @@ M-: (info "(texinfo)Installing an Info File") ; how to install an Info file afte
 GNU FREE DOCUMENTATION LICENSE
 
 shouldn't this be read first?
-I'll read this after I apply for 20 jobs (I have to use Vim again; I might do this tomorrow when I get my ENR208 exam results), catch up, and `eval` the upcoming assignment (fucking in fucking a fucking fucking fucking word fucking processor fucking because fucking fucking fucking Curtin fucking does fucking not fucking fucking fucking support fucking fucking fucking Portable fucking fucking fucking Document fucking fucking fucking Formats fucking fucking fucking!).
+i read it all into the forgetting curve.
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(info)GNU Free Documentation License")'
+INDEX
+
+i read this too, but only learned how much i have forgotten; now i feel like i should read this all over again before i move on…
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(info)Index")'
