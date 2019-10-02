@@ -1,0 +1,22 @@
+printf \\ec;emacs -nw --no-splash --eval='(info "eintr")'
+
+PREFACE: PREFACE
+
+ON READING THIS TEXT: ON READING THIS TEXT
+M-. ; xref-find-definitions is apparently useful, but remains a mystery…
+
+WHO YOU ARE: FOR WHOM THIS IS WRITTEN
+Say everything three times; introduce it, then show it in a contextual example, then review it. #magic
+
+LISP HISTORY: LISP HISTORY
+Lisp was first developed in the late 1950s at the Massachusetts Institute of Technology for research in artificial intelligence.
+The great power of the Lisp language makes it superior for other purposes as well, such as writing editor commands and integrated environments.
+(The standard Emacs distribution contains an optional extensions file, `cl.el`, that adds many Common Lisp features to Emacs Lisp.)
+
+NOTE FOR NOVICES: A NOTE FOR NOVICES
+M-C-\ ; indent-region
+C-u ; universal argument
+
+LIST PROCESSING
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)List Processing")'

@@ -1,0 +1,18 @@
+printf \\ec;emacs -nw --no-splash --eval='(help-with-tutorial)'
+
+/C-./ ; controlled commands
+/M-./ ; /\e ./ ; /alternative|altered/ commands
+
+C-x C-c ; \e
+C-g ; vim \e
+C-x k ; kill buffer
+
+SUMMARY
+
+C-v ; page down
+M-v ; page up
+C-l ; redraw garbage line noise, and cycle /middle|top|bottom/ vertical alignment
+
+BASIC CURSOR CONTROL
+
+printf \\ec;emacs -nw --no-splash --eval='(progn (help-with-tutorial) (goto-line 79) (dotimes (_ 2) (recenter-top-bottom)))'

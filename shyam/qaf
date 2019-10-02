@@ -1,4 +1,8 @@
 serious(programming) :- fix(indentation). % emacs from scratch would be better, but i don't want to do it more than once
+% EMACS defaults are Generally Not Used
+% not being able to /\t|indent/ in certain files is just crippling; most especially in multiple line comments, where it stoning matters
+% who the hell uses this? i feel so handicapped
+% meat eaters must use \s for indentation ∵ i don't understand these "people" (zombies); they lack the intellectual capacity to recognise the superiority of \t for indentation
 
 https://www.google.com/search?q=emacs+indent+region
 https://www.gnu.org/software/emacs/manual/html_node/emacs/Multi_002dline-Indent.html
