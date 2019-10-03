@@ -6,17 +6,48 @@ ON READING THIS TEXT: ON READING THIS TEXT
 M-. ; xref-find-definitions is apparently useful, but remains a mystery…
 
 WHO YOU ARE: FOR WHOM THIS IS WRITTEN
-Say everything three times; introduce it, then show it in a contextual example, then review it. #magic
+"Say everything three times; introduce it, then show it in a contextual example, then review it. #magic" ; #tags are `sh` comments, right?
 
 LISP HISTORY: LISP HISTORY
-Lisp was first developed in the late 1950s at the Massachusetts Institute of Technology for research in artificial intelligence.
-The great power of the Lisp language makes it superior for other purposes as well, such as writing editor commands and integrated environments.
-(The standard Emacs distribution contains an optional extensions file, `cl.el`, that adds many Common Lisp features to Emacs Lisp.)
+"Lisp was first developed in the late 1950s at the Massachusetts Institute of Technology for research in artificial intelligence."
+"The great power of the Lisp language makes it superior for other purposes as well, such as writing editor commands and integrated environments."
+"(The standard Emacs distribution contains an optional extensions file, `cl.el`, that adds many Common Lisp features to Emacs Lisp.)"
 
 NOTE FOR NOVICES: A NOTE FOR NOVICES
 M-C-\ ; indent-region
 C-u ; universal argument
 
-LIST PROCESSING
+LIST PROCESSING: 1 LIST PROCESSING
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)List Processing")'
+"Lots of Isolated Silly Parentheses" ; I think it's easier to sell ((lisp)) as an extra curvy superspecies of python() with its' large intestine gutted; it even "loops" too!
+"LISt Processing" ; Lisp Is Symbolic Programming!!! :D
+
+LISP LISTS: 1.1 LISP LISTS
+; lisp can't goto parameters (treating them as functions), like machine instructions, but shyamscript is the best of both worlds
+; list can't can't evaluate all procedure calls, like machine instructions, but shyamscript is the best of both worlds
+; atom = indivisible; physics's wrong about atoms!
+; sub-atomic particles = bitcodes ∘ bytecodes
+; s-forms
+; parametric namespace ideas: atom, symbol, abstraction,.. (the more general, the more universally applicable; lisp is about abstraction, not specification)
+; i like to think of /numbers|.*/ as symbols
+; C-n is next-line not forward-line
+; (lists) "strings" symbols 1111011 ; [vectors] . grawlixes
+; Lisp Interaction mode, and Emacs Lisp mode
+\t ; supposedly indents a line by "the right amount" #subjective
+M-C-\ ; supposedly indents a region "properly" #subjectivity
+
+RUN A PROGRAM: 1.2 RUN A PROGRAM
+; lisp can't goto parameters (treating them as functions), like machine instructions, but shyamscript is the best of both worlds
+; list can't can't evaluate all procedure calls, like machine instructions, but shyamscript is the best of both worlds
+C-x C-e ; C-j in info mode, but outputs in the minibuffer echo area
+; i'm assuming (#o4, #x4, ?\C-d) is octal, and hex, and no binary, but what is ?\C-d?
+; Lisp interpreter, from human language interpretation by a human
+; ---------- Footnotes ---------- (1) Emacs shows integer values in decimal, in octal and in hex, and also as a character, but let’s ignore this convenience feature for now.
+; so ?C-d is the character representation of 4? i thought they were all control codes, closer to the point of origin
+; oh, abcd; so it's the $d^{th}$ control code, but there are actually unicodes for at least some of them
+
+MAKING ERRORS: 1.3 GENERATE AN ERROR MESSAGE
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Making Errors")'
+
+; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook

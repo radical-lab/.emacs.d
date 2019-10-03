@@ -11,8 +11,37 @@ SUMMARY
 
 C-v ; page down
 M-v ; page up
-C-l ; redraw garbage line noise, and cycle /middle|top|bottom/ vertical alignment
+C-l ; redraw garbage line noise, and cycle /middle|top|bottom/ vertical alignment, but the C-h k does not mention redrawing
 
 BASIC CURSOR CONTROL
 
-printf \\ec;emacs -nw --no-splash --eval='(progn (help-with-tutorial) (goto-line 79) (dotimes (_ 2) (recenter-top-bottom)))'
+; why are they using \t for ascii art‽ this is so stupid …need an ascii art macro that uses tab-width to s/(\s+)/\,(f \1 "\t")/
+
+; Very often Meta characters are used for operations related to the units defined by language (words, sentences, paragraphs), while Control characters operate on basic units that are independent of what you are editing (characters, lines, etc).
+C-b ; back char
+C-n ; next line
+C-p ; prev line
+C-f ; fore char
+M-b ; back word
+M-f ; fore word
+C-a ; back \r\n (ReturN) https://stackoverflow.com/a/6539810
+C-e ; fore \r\n (ReturN) https://stackoverflow.com/a/6539810
+M-a ; back sent
+M-e ; fore sent
+M-< ; init file (/born|head/ /buff/)
+M-> ; stop file (/dead|tail/ /buff/)
+; this would be more consistent, and mnemonical
+; could /c-(a|z)/ for chars, /(r|n)-(a|z)/ for /\r|\n/, /l-(a|z)/ for lines (/^|$/), /f-(a|z)/ for files (/^|$/), /w-(a|z)/ for words (/\s/), /s-(a|z)/ for sentences (/\.\s/), /p-(a|z)/ for paragraphs (/\n\n/),..
+; s/a/s/, s/z/e/, for eof,..
+; s/a/h/, s/z/t/, for heads, or tails?
+; /l-(a|z)/ twice should jump lines (maybe warn like /C-(s|r)/) …warning with s/(a)n/\1/ sound (awooga awooga awooga)
+; scrolling versus paging is just a matter of speed, so in games shifting is usually slower; /(S-)?.-(a|z)/, where that dot is /./ not /\./, since it can be applied to every"-thing", and just have /((C-u)+ \d*)?(S-)?m-(a|z)/, where s/m/move/
+
+; universal-argument
+/C-u \d* ./ ; repetition, or ¿temporary? behaviour modification (social engineering)
+/M-\d* ./   ; /C-u \d* ./
+/(C-u)* ./  ; (λx./C-u 4ˣ ./)
+
+IF EMACS STOPS RESPONDING
+
+printf \\ec;emacs -nw --no-splash --eval='(progn (help-with-tutorial) (goto-line 248) (dotimes (_ 2) (recenter-top-bottom)))'

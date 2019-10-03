@@ -13,7 +13,10 @@ C-x r t C-u /\d*/ \t C-m ; iprefer more /general|ultimate/ answers to life, the 
 
 C-U /\d+/ ; unicode mode (C-g doesn't work! So it's not Emacs, but I'm not sure about controlled arrows)
 
-/(C-)?S-(←|↓|↑|→)/ ; select region between mark, and point (highlighted, but not the same as terminal selection; co-existence is supported)
+/(C-)?(S-)?(←|↓|↑|→)/ ; select region between mark, and point (highlighted, but not the same as terminal selection; co-existence is supported)
+; regions can be \b but not to klipboard
+; regions /[a-zA-Z0-9]/ do not overwrite, and this is annoying having to \b first
+C-g ; vim \e
 
 https://vim.fandom.com/wiki/Uniq_-_Removing_duplicate_lines
 %s/\v^(.*)(\n\1)+$/\1/
@@ -29,3 +32,33 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Other-Kill-Commands.ht
 https://www.gnu.org/software/emacs/manual/html_node/emacs/Using-Region.html
 C-w ; kill region
 M-w ; C-w C-y
+C-k ; cut to C-e
+C-y ; paste
+/((C-g)? C-_)*/ ; /(un|re)do/, where C-g toggles
+
+/F3 .* F4 (F4)*/ ; macros (vim supports more, but not that much more) this is what you do for all actions; sandwich them between macros (kind of like vim \e in terms of frequency, but for vim \.) it's just bound to inconvenient keys for some"-thing" that's so fundamentally useful; unless there's another way?
+/C-u \d* ./ ; repetition (best served c̄ macro sandwiches)
+
+C-x C-s ; save
+C-x C-c ; escape
+C-g ; vim \e
+
+/C-(a|e)/ ; /(s|e)ol/
+/M-(<|>)  ; /(s|e)of/
+/(C|M)-v/ ; page /up|down/ …do i really actually use this?
+
+C-e C-k \s C-b ; vim S-j
+
+TODO
+	goto loc (makes /M-(<|>)/ redundant)
+		draw relative loc# (absolute loc y is in the mode line, but need char x)
+		goto relative loc# to make s/b(np)f/\1/ redundant
+	r-expressions
+	buffers; need to script multiple file access on boot, or even restore session on boot, well kind of both, but make it an editable file c̄ either /first|last/ the default, or even tiling… hack `C-x b` to prompt saving first, universal argument can be promptless; or some"-thing"
+	that server "-thing" to replace terminal tabbing
+	maybe narrowing
+		C-x n n ; zoom in region
+		C-x n w ; zoom out region
+	probably not mark (for a recurse anyway)
+		C-x C-x ; swap mark, and /cursor|point/
+		/C-\s/  ; set mark at /cursor|point/, and /select|highlight/ /selection|region/ …i might use this every now and then, but probably not ∵ /(C-)?(S-)?(←|↓|↑|→)/
