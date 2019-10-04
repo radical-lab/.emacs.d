@@ -11,7 +11,7 @@ SUMMARY
 
 C-v ; page down
 M-v ; page up
-C-l ; redraw garbage line noise, and cycle /middle|top|bottom/ vertical alignment, but the C-h k does not mention redrawing
+C-l ; redraw garbage line noise, and cycle /middle|top|bottom/ vertical alignment, but the C-h k C-l does not mention redrawing
 
 BASIC CURSOR CONTROL
 
@@ -44,4 +44,12 @@ M-> ; stop file (/dead|tail/ /buff/)
 
 IF EMACS STOPS RESPONDING
 
-printf \\ec;emacs -nw --no-splash --eval='(progn (help-with-tutorial) (goto-line 248) (dotimes (_ 2) (recenter-top-bottom)))'
+C-g ; vim \e
+
+DISABLED COMMANDS
+
+C-x C-l; disabled command
+
+WINDOWS
+
+printf \\ec;emacs -nw --no-splash --eval='(progn (help-with-tutorial) (goto-line 283) (dotimes (_ 2) (recenter-top-bottom)))'
