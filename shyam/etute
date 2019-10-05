@@ -52,4 +52,9 @@ C-x C-l; disabled command
 
 WINDOWS
 
-printf \\ec;emacs -nw --no-splash --eval='(progn (help-with-tutorial) (goto-line 283) (dotimes (_ 2) (recenter-top-bottom)))'
+C-x 1 ; One window (i.e., kill all other windows)
+; There is a whole series of commands that start with C-x; many of them have to do with windows, files, buffers, and related things. These commands are two, three or four characters long.
+
+INSERTING AND DELETING
+
+printf \\ec;emacs -nw --no-splash --eval='(progn (help-with-tutorial) (goto-line 309) (recenter-top-bottom 0))'

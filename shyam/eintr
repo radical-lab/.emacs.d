@@ -52,10 +52,15 @@ q ; escape the debugger, but i always just C-x k, and C-g never worked
 ; backtrace is backwards, so just imagine the reverse of prolog `trace.`? the imagination is either nightmarishly complicated to traverse, or infinitely useless
 ; to me atoms are /representational|specific/, and symbols are /abstract|general/, where atoms are a subset of symbols; not the other way around
 ; a function is like a generalised template that can be applied to heterogeneous parameters; i hate hello world programs ∵ they do not demonstrate the true power of programming
+; n deeply nested compositions = [n,श्याम) lines of backtrace; it's a trivial pursuit to render backtrace useless #foretrace_ftw
 
 NAMES & DEFINITIONS: 1.4 SYMBOL NAMES AND FUNCTION DEFINITIONS
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Names & Definitions")'
+Since Emacs Lisp is large, it is customary to name symbols in a way that identifies the part of Emacs to which the function belongs. Thus, all the names for functions that deal with Texinfo start with /texinfo-/ and those for functions that deal with reading mail start with /rmail-/.
+
+LISP INTERPRETER: 1.5 THE LISP INTERPRETER
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Lisp Interpreter")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md
