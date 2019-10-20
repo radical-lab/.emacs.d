@@ -57,4 +57,27 @@ C-x 1 ; One window (i.e., kill all other windows)
 
 INSERTING AND DELETING
 
-printf \\ec;emacs -nw --no-splash --eval='(progn (help-with-tutorial) (goto-line 309) (recenter-top-bottom 0))'
+; just type normally to insert; like notepad,..
+; i hate the backslash continuation line, and i hate the padded spaces; just print lines normally, and use $WIDTH, and $HEIGHT, (or whatever they're called) for the math; i hate copying text only to discover there is an abundance of space
+/\r|\n|\r\n/ ; conductive boogaloo
+/C-u \d (\r|\n|\r\n)/ ; is insulated
+\b   ; delete-backward-char
+C-d  ; delete-char
+M-\b ; backward-kill-word
+M-d  ; kill-word
+C-k  ; kill-line
+M-k  ; kill-sentence
+C-w  ; kill-region
+M-w  ; kill-ring-save (why didn't they include this one?)
+C-y  ; yank (reuse clones)
+M-y  ; yank-pop (cycles the cyclic kill ring) (depends on /yank(-pop)?/; useful to know for modal hacking)
+; text has soul
+; killing supports reincarnation (yanked back from the future), but deleting is a matter ∘ antimatter; all can be undone
+; Generally, the commands that can remove a lot of text kill the text (they are set up so that you can yank the text), while the commands that remove just one character, or only remove blank lines and spaces, do deletion (so you cannot yank that text).  <DEL> and C-d do deletion in the simplest case, with no argument.  When given an argument, they kill instead.
+; Some other editors call killing and yanking "cutting" and "pasting" (see the Glossary in the Emacs manual).
+; If you do several C-k's in a row, all of the killed text is saved together, so that one C-y will yank all of the lines at once.
+; ^ this means the kill ring is hackable
+
+UNDO
+
+printf \\ec;emacs -nw --no-splash --eval='(progn (help-with-tutorial) (goto-line 473) (recenter-top-bottom 0))'

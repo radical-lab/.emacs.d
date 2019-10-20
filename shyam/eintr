@@ -39,7 +39,7 @@ M-C-\ ; supposedly indents a region "properly" #subjectivity
 RUN A PROGRAM: 1.2 RUN A PROGRAM
 ; lisp can't goto parameters (treating them as functions), like machine instructions, but shyamscript is the best of both worlds
 ; lisp can't evaluate all procedure calls, like machine instructions, but shyamscript is the best of both worlds
-C-x C-e ; C-j in info mode, but outputs in the minibuffer echo area
+C-x C-e ; C-j in info mode, but outputs in the minibuffer echo area instead of *scratch*
 ; i'm assuming (#o4, #x4, ?\C-d) is octal, and hex, and no binary, but what is ?\C-d?
 ; Lisp interpreter, from human language interpretation by a human
 ; ---------- Footnotes ---------- (1) Emacs shows integer values in decimal, in octal and in hex, and also as a character, but let’s ignore this convenience feature for now.
@@ -59,8 +59,23 @@ NAMES & DEFINITIONS: 1.4 SYMBOL NAMES AND FUNCTION DEFINITIONS
 Since Emacs Lisp is large, it is customary to name symbols in a way that identifies the part of Emacs to which the function belongs. Thus, all the names for functions that deal with Texinfo start with /texinfo-/ and those for functions that deal with reading mail start with /rmail-/.
 
 LISP INTERPRETER: 1.5 THE LISP INTERPRETER
+'(list)
+(function)
+(err)
+; complications: symbols (variables), special forms (defun,if,..), macros (preprocessed metaprogramming,when,defun,..), nested lists
+; Otherwise, the interpreter works left to right, from one expression to the next.
+; but working backwards could save time; tdd, declarative, logical, intelligent,..
+; byte-compile is a bastardisation∘lisp; it wouldn't be so bad if it didn't interfere c̄ symbol-function
+byte-compile-file ; <file.el >file.elc
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Lisp Interpreter")'
+EVALUATION: 1.6 EVALUATION
+; iprefer s/eval/proc/, from p(i)=o; instead of eval(expression)=value
+; sfx = move a cursor, copy a file, printing results
+C-x C-e ; eval-last-sexp
+
+VARIABLES: 1.7 VARIABLES
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Variables")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md

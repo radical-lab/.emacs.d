@@ -38,6 +38,15 @@ C-y ; paste
 
 /F3 .* F4 (F4)*/ ; macros (vim supports more, but not that much more) this is what you do for all actions; sandwich them between macros (kind of like vim \e in terms of frequency, but for vim \.) it's just bound to inconvenient keys for some"-thing" that's so fundamentally useful; unless there's another way?
 /C-u \d* ./ ; repetition (best served c̄ macro sandwiches)
+…
+https://www.google.com/search?q=emacs+macro+count
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Keyboard-Macro-Counter.html
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Basic-Keyboard-Macro.html
+https://stackoverflow.com/a/1512270
+(dotimes (i 24) (insert (format "\n\t%02d;" i))); (1+ i))))
+(dotimes (i 24) (insert (format "\t%02d;\n" i))); (1+ i))))
+…
+i agree that elisp is better than macros, and it's probably for the best that macros are inconvenient; what i need is `M-: ( C-a )` = `M-: ( move-beginning-of-line )`; or just use au\tocomple\tion
 
 C-x C-s ; save
 C-x C-c ; escape
