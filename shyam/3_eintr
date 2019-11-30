@@ -75,7 +75,15 @@ C-x C-e ; eval-last-sexp
 
 VARIABLES: 1.7 VARIABLES
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Variables")'
+; variables are symbols that are constant functions, but are not functions; which makes them incomputable
+; symbols are object oriented, but only have one variable, and one function, each (both unbounded by default; /f?boundp/ says if it's warranty is voided); kind of like arrays in sh, compared to bash
+; binding the bounds of a symbol
+(symbol-function (fset 'f (symbol-value 'f)))
+C-x k ; q ; escape from the *Backtrace* buffer, (void-function f) versus (void-variable x)
+
+ARGUMENTS: 1.8 ARGUMENTS
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Arguments")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md

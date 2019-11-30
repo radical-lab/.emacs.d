@@ -80,4 +80,12 @@ M-y  ; yank-pop (cycles the cyclic kill ring) (depends on /yank(-pop)?/; useful 
 
 UNDO
 
-printf \\ec;emacs -nw --no-splash --eval='(progn (help-with-tutorial) (goto-line 473) (recenter-top-bottom 0))'
+/C-(\/|_|x u)/
+; A numeric argument to undo acts as a repeat count; otherwise use it incrementally.
+; But there are two exceptions: commands that do not change the text don't count (this includes cursor motion commands and scrolling commands), and self-inserting characters are usually handled in groups of up to 20.  (This is to reduce the number of C-/'s you have to type to undo insertion of text.)
+; undo considers both the kill ring, and the delete ring; unlike yanking
+; (C-g toggles between undo, and redo; oh, this is still just the tutorial)
+
+FILES
+
+printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 502) (recenter-top-bottom 0)))'

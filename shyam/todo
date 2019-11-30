@@ -1,0 +1,5 @@
+i could graph my progress of `wc` over time
+conshell: śaṅkha(lipi)
+	written in elisp, but as dialectically agnostic as possible; isomorphic lisp #dsl
+	scsh
+	eshell

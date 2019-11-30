@@ -1,7 +1,21 @@
 printf \\ec;emacs -nw --no-splash --eval='(info "info")'
 
+………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
 /? \s*/ ; help
-/C-\s (M-f|C-n)* C-g/ ; attentive reading (/shifted|controlled/ arrows also work, but it might not be emacs)
+/C-\s (M-f|C-n)* C-g/ ; attentive reading (/shifted|controlled/ arrows also work, but it might not be emacs) …JUST USE ARROW KEYS
+\s ; scroll down
+p ; prev a node
+u ; up   a node
+n ; next a node
+/C-(l|L)/ ; redraw, and cycle through vertical alignment
+l ; return from logged hyperlinking (hyperspacial \escape velocity) (they use hyperlogging for human subject research) (l is for last)
+q ; Info-exit (q is for quit but means \escape)
+C-s ; consistency is preferable
+C-r ; consistency is preferable
+C-x C-e ; eval-last-sexp ; C-j ; eval-print-last-sexp
+C-h k ; describe-key
+C-h f ; describe-function
+………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
 
 ; Info file /info-stnd|texinfo/ does not exist.
 
