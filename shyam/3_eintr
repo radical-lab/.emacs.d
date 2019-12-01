@@ -76,10 +76,12 @@ C-x C-e ; eval-last-sexp
 VARIABLES: 1.7 VARIABLES
 
 ; variables are symbols that are constant functions, but are not functions; which makes them incomputable
-; symbols are object oriented, but only have one variable, and one function, each (both unbounded by default; /f?boundp/ says if it's warranty is voided); kind of like arrays in sh, compared to bash
+; symbols are object oriented, but only have one variable, and one function, each (both unbounded by default; /f?boundp/ says if its' warranty is voided); kind of like arrays in sh, compared to bash
 ; binding the bounds of a symbol
-(symbol-function (fset 'f (symbol-value 'f)))
+(symbol-function (fset 'f (symbol-value 'f))); f is symbol-function, but (f) is symbol-value
 C-x k ; q ; escape from the *Backtrace* buffer, (void-function f) versus (void-variable x)
+(fset 'f (lambda (x) (set 'f x) f)); superpositional symbols are their' own setter, and getter
+(fset 'f (lambda (x) (set 'f (symbol-function 'f)) (byte-compile 'f) x)); f is symbol-function, but (f) is symbol-value
 
 ARGUMENTS: 1.8 ARGUMENTS
 
