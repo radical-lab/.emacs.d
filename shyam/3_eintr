@@ -82,6 +82,7 @@ VARIABLES: 1.7 VARIABLES
 C-x k ; q ; escape from the *Backtrace* buffer, (void-function f) versus (void-variable x)
 (fset 'f (lambda (x) (set 'f x) f)); superpositional symbols are their' own setter, and getter
 (fset 'f (lambda (x) (set 'f (symbol-function 'f)) (byte-compile 'f) x)); f is symbol-function, but (f) is symbol-value
+(fset 'f (lambda () (set 'f (symbol-function 'f)) (fset 'f (lambda (x) (set 'f f) (byte-compile 'f) x)))); this one works better
 
 ARGUMENTS: 1.8 ARGUMENTS
 
