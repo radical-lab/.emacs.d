@@ -84,10 +84,22 @@ C-x k ; q ; escape from the *Backtrace* buffer, (void-function f) versus (void-v
 (fset 'f (lambda (x) (set 'f (symbol-function 'f)) (byte-compile 'f) x)); f is symbol-function, but (f) is symbol-value
 (fset 'f (lambda () (set 'f (symbol-function 'f)) (fset 'f (lambda (x) (set 'f f) (byte-compile 'f) x)))); this one works better
 (fset 'f (lambda (y) (set 'f (symbol-function 'f)) (fset 'f (lambda (x) (set 'f f) (byte-compile 'f) x)) (f y))); this one works best
+; I reject your reality and substitute my own. -- Adam, the Savage caveman from the garden of eden, who busted the myth that he has an apple stuck half way down his throat
 
 ARGUMENTS: 1.8 ARGUMENTS
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Arguments")'
+; passing /e?valuable (symbolic|atomic|listed|quoted)/ arguments to functions
+; a symbol CAN have two different function definitions at the same time!
+; so strings are atomic? not just a list of characterisations?
+; zero arity math functions return the identity
+; /.*p/() are predicates, but null() is not for obvious reasons; even though it is (like an undocumented feature; self-documenting code)
+; message() is so useful, and it will goto the echo area, and the *Messages* buffer, in toto (i thought it was a mistake, but the /html|pdf/ manuals are obvious)
+; unquoted output is a side-effect!
+; message() supports /%(s|d)/, but %s supports %d, and %d 
+
+SET & SETQ: 1.9 SETTING THE VALUE OF A VARIABLE
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)set & setq")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md

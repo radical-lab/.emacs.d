@@ -1,0 +1,15 @@
+frame: terminal emulator, console,.. #physical
+window: partition,.. #physical
+buffer: cache,.. #mental #clerical #intellectual #spiritual #abstract #intangible
+…
+modeline: metadata
+…
+minibuffer: input
+echo area: output
+
+the command reads the argument: /`C-. .`/
+
+/(find|visit)(ing)?( a)? file/
+
+kill ring
+yanking
