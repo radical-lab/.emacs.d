@@ -83,7 +83,7 @@ C-x k ; q ; escape from the *Backtrace* buffer, (void-function f) versus (void-v
 (fset 'f (lambda (x) (set 'f x) f)); superpositional symbols are their' own setter, and getter
 (fset 'f (lambda (x) (set 'f (symbol-function 'f)) (byte-compile 'f) x)); f is symbol-function, but (f) is symbol-value
 (fset 'f (lambda () (set 'f (symbol-function 'f)) (fset 'f (lambda (x) (set 'f f) (byte-compile 'f) x)))); this one works better
-(fset 'f (lambda (y) (set 'f (symbol-function 'f)) (fset 'f (lambda (x) (set 'f f) (byte-compile 'f) x)) (f y))); this one works best
+(fset 'f (lambda (y) (set 'f (symbol-function 'f)) (fset 'f (lambda (x) (byte-compile 'f) x)) (f y))); this one works best
 ; I reject your reality and substitute my own. -- Adam, the Savage caveman from the garden of eden, who busted the myth that he has an apple stuck half way down his throat
 
 ARGUMENTS: 1.8 ARGUMENTS
@@ -95,11 +95,76 @@ ARGUMENTS: 1.8 ARGUMENTS
 ; /.*p/() are predicates, but null() is not for obvious reasons; even though it is (like an undocumented feature; self-documenting code)
 ; message() is so useful, and it will goto the echo area, and the *Messages* buffer, in toto (i thought it was a mistake, but the /html|pdf/ manuals are obvious)
 ; unquoted output is a side-effect!
-; message() supports /%(s|d)/, but %s supports %d, and %d 
+; message() supports /%(s|d)/, but %s supports %d, and %d does "-thing"s
 
 SET & SETQ: 1.9 SETTING THE VALUE OF A VARIABLE
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)set & setq")'
+set()
+setq()
+let()
+; to bind a symbolic variable to a value, or to bind a value to a symbolic variable? that is the query
+(set 'flowers '(rose violet daisy buttercup)); The list ‘(rose violet daisy buttercup)’ will appear in the echo area. This is what is _returned_ by the ‘set’ function.  As a side effect, the symbol ‘flowers’ is bound to the list; that is, the symbol ‘flowers’, which can be viewed as a variable, is given the list as its value. (This process, by the way, illustrates how a side effect to the Lisp interpreter, setting the value, can be the primary effect that we humans are interested in.  This is because every Lisp function must return a value if it does not get an error, but it will only have a side effect if it is designed to have one.)
+(setq trees '(pine fir oak maple) herbivores '(gazelle antelope zebra)) ; setq autoquotes, and can multitask
+; Although I have been using the term “assign”, there is another way of thinking about the workings of ‘set’ and ‘setq’; and that is to say that ‘set’ and ‘setq’ make the symbol _point_ to the list.  This latter way of thinking is very common and in forthcoming chapters we shall come upon at least one symbol that has “pointer” as part of its name.  The name is chosen because the symbol has a value, specifically a list, attached to it; or, expressed another way, the symbol is set to point to the list.
+(setq counter 0)                ; Let’s call this the initializer.
+(setq counter (+ counter 1))    ; This is the incrementer. (you have to evaluate it multiple times, but it can be automated; a couple sections ago, as a self-modifying /function|object/; metaprogramming ftw)
+counter                         ; This is the counter.
+(let setq() f() g() h()) ; why is this not included? it didn't even get a goto hyperlink! nobody uses it anyway…
+
+SUMMARY: 1.10 SUMMARY
+
+Any list in Lisp is a program ready to run.
+ • Lisp programs are made up of expressions, which are lists or singleton atoms.
+ • Lists are made up of zero or more atoms or /inner|nested/ lists, separated by whitespace and surrounded by parentheses.  A list can be empty.
+ • Atoms are multi-character symbols, like ‘forward-paragraph’, single character symbols like ‘+’, strings of characters between double quotation marks, or numbers.
+ • A number evaluates to itself.
+ • A string between double quotes also evaluates to itself.
+ • When you evaluate a symbol by itself, its value is returned.
+ • When you evaluate a list, the Lisp interpreter looks at the first symbol in the list and then at the function definition bound to that symbol.  Then the instructions in the function definition are carried out.
+ • A single-quote ‘'’ tells the Lisp interpreter that it should return the following expression as written, and not evaluate it as it would if the quote were not there.
+ • Arguments are the information passed to a function.  The arguments to a function are computed by evaluating the rest of the elements of the list of which the function is the first element.
+ • A function always returns a value when it is evaluated (unless it gets an error); in addition, it may also carry out some action that is a side effect.  In many cases, a function’s primary purpose is to create a side effect.
+idk what sfx even are anymore
+
+ERROR MESSAGE EXERCISES: 1.11 EXERCISES
+
+how can you generate an error if the symbol is appropriate?
+ • Generate an error message by evaluating an appropriate symbol that is not within parentheses.
+void-variable
+ • Generate an error message by evaluating an appropriate symbol that is between parentheses.
+(void-function)
+ • Create a counter that increments by two rather than one.
+(fset 'f (lambda (x) (if (not (boundp 'f)) (set 'f x)) (fset 'f (lambda () (set 'f (+ f 2))))))
+ • Write an expression that prints a message in the echo area when evaluated.
+(message "%s" ((lambda () (if (boundp 'f) (f) (f 3)) f)))
+
+PRACTICING EVALUATION: 2 PRACTICING EVALUATION
+
+HOW TO EVALUATE: HOW TO EVALUATE
+
+; i never thought to /C-h k ./ for self-insert-command()
+; interactive commands are the functions evaluated by typing keystrokes
+C-x C-e ; evaluate elisp outside of the appropriate contextual buffer (message() goto echo area, and *Messages* buffer), actually this also works in the *scratch* buffer
+C-j ; evaluate elisp inside of the appropriate contextual buffer (between the elisp /instructions?/ followed by \n, and the point), but this doesn't work outside of the *scratch* buffer
+C-u C-x C-e ; C-j \b (no \n), but contextually C-x C-e
+
+BUFFER NAMES: 2.1 BUFFER NAMES
+
+; apparently there is a difference between buffers (ram), and files (drive)
+(buffer-name) ; the name of the buffer appears in the echo area (same as name of file)
+(buffer-file-name) ; the full path-name of the file to which the buffer refers appears in the echo area
+; wiki.texinfo
+; The symbol ‘nil’ is from the Latin word for “nothing”. In Lisp, ‘nil’ is also used to mean “false” and is a synonym for the empty list, ‘()’.
+; the computer is only as intelligent as the person who hacked it together
+; The word “buffer”, by the way, comes from the meaning of the word as a cushion that deadens the force of a collision.  In early computers, a buffer cushioned the interaction between files and the computer’s central processing unit.  The drums or tapes that held a file and the central processing unit were pieces of equipment that were very different from each other, working at their own speeds, in spurts.  The buffer made it possible for them to work together effectively. Eventually, the buffer grew from being an intermediary, a temporary holding place, to being the place where work is done.  This transformation is rather like that of a small seaport that grew into a great city: once it was merely the place where cargo was warehoused temporarily before being loaded onto ships; then it became a business and cultural center in its own right.
+\s ; at the splash screen, doesn't goto the *scratch* buffer
+C-u C-x C-e ; i also put it in the preceding section
+
+GETTING BUFFERS: 2.2 GETTING BUFFERS
+
+(current-buffer)
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr) getting buffers")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md

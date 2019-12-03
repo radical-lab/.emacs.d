@@ -88,9 +88,17 @@ UNDO
 
 FILES
 
-C-x C-f /.+/ ; /(find|visit)(ing)?( a)? file/, the command reads the argument
-C-x C-s ; save the file (¿leaving the file?)
+C-x C-f /.+/ ; find-file ;  /(find|visit)(ing)?( a)? file/, the command reads the argument
+C-x C-s ; save-buffer ; save the file (¿leaving the file?)
 
 BUFFERS
 
-printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 573) (recenter-top-bottom 0)))'
+C-x C-b ; list-buffers ; includes crm, name, size, mode, file
+C-x 1 ; delete-other-windows
+C-x C-f /.+/ ; switches to file buffers, even if they already exist
+C-x b ; switch-to-buffer
+C-x s ; save-some-buffers ; doesn't save all buffers (*scratch*, *Messages*, *Help*), but saves modified file-visiting buffers
+
+EXTENDING THE COMMAND SET
+
+printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 641) (recenter-top-bottom 0)))'

@@ -1,6 +1,7 @@
 frame: terminal emulator, console,.. #physical
 window: partition,.. #physical
-buffer: cache,.. #mental #clerical #intellectual #spiritual #abstract #intangible
+buffer: cache,.. #mental #clerical #intellectual #spiritual #abstract #intangible #metaphysical
+; to buff the window inside the frame ∘ windows ∘ buffers
 …
 modeline: metadata
 …
@@ -12,4 +13,7 @@ the command reads the argument: /`C-. .`/
 /(find|visit)(ing)?( a)? file/
 
 kill ring
+killing
 yanking
+
+point

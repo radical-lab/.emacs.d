@@ -1,6 +1,6 @@
 ; I started learning Emacs, the Elisp Machine Accumulating C Supplements, so I can do FP while hacking any language (including the dysfunctional ones). I think it's easier to sell ((lisp)) as an extra curvy superspecies of python() with its' large intestine gutted; it even "loops" too! "List Processor" is the binomial nomenclature. Erasing Minds Allows Complete Submission but is Generally Not Used… Lisp Is Symbolic Programming!!! :D
 
-; this is my plan: agtoe -> info -> (emacs tute, elisp intro) -> (emacs man, elisp man) -> … -> guix -> … -> clojurescript
+; this is my Life Is So Precious plan: agtoe -> info -> (emacs tute, elisp intro) -> (emacs man, elisp man) -> … -> guile lisp -> guix -> … -> clojure -> clojurescript -> https://typedclojure.org/ -> …
 
 ; i wonder if bsd from scratch is better than linux from scratch…
 (if (not (eq system-type 'gnu/linux)) (error (upcase "malware goes here")))
