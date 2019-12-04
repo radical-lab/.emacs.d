@@ -101,4 +101,24 @@ C-x s ; save-some-buffers ; doesn't save all buffers (*scratch*, *Messages*, *He
 
 EXTENDING THE COMMAND SET
 
-printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 641) (recenter-top-bottom 0)))'
+; /e(X)tend/ command
+C-x ; Character eXtend. Followed by one character.
+M-x ; Named command eXtend. Followed by a long name.
+
+C-z ; C-x C-z ; suspend-frame
+$ fg ; $ %emacs ; resume
+
+C-x C-f ; find-file
+C-x C-s ; save-buffer
+C-x s   ; save-some-buffers
+C-x C-b ; list-buffers
+C-x b   ; switch-to-buffer
+C-x C-c ; save-buffers-kill-terminal
+C-x 1   ; delete-other-windows
+C-x u   ; undo
+
+M-x replace-string
+
+AUTO SAVE
+
+printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 708) (recenter-top-bottom 0)))'

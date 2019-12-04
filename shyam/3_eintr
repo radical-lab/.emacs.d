@@ -84,6 +84,8 @@ C-x k ; q ; escape from the *Backtrace* buffer, (void-function f) versus (void-v
 (fset 'f (lambda (x) (set 'f (symbol-function 'f)) (byte-compile 'f) x)); f is symbol-function, but (f) is symbol-value
 (fset 'f (lambda () (set 'f (symbol-function 'f)) (fset 'f (lambda (x) (set 'f f) (byte-compile 'f) x)))); this one works better
 (fset 'f (lambda (y) (set 'f (symbol-function 'f)) (fset 'f (lambda (x) (byte-compile 'f) x)) (f y))); this one works best
+(fset 'f (lambda (y) (fset 'f (lambda (x) x)) (set 'f (symbol-function 'f)) (byte-compile 'f) (f y))); this one is optimised, and caches the prime program ™
+(fset 'f (lambda (y) (set 'f (symbol-function 'f)) (fset 'f (lambda (x) x)) (byte-compile 'f) (f y))); this one is optimised, and caches the metaprogram
 ; I reject your reality and substitute my own. -- Adam, the Savage caveman from the garden of eden, who busted the myth that he has an apple stuck half way down his throat
 
 ARGUMENTS: 1.8 ARGUMENTS
@@ -162,9 +164,47 @@ C-u C-x C-e ; i also put it in the preceding section
 
 GETTING BUFFERS: 2.2 GETTING BUFFERS
 
-(current-buffer)
+(current-buffer) ; on point
+(other-buffer) ; not in a /window|frame/
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr) getting buffers")'
+SWITCHING BUFFERS: 2.3 SWITCHING BUFFERS
+
+; buffer is not a filestring
+(switch-to-buffer (other-buffer)) ; switch to most recent invisible buffer
+(switch-to-buffer (other-buffer (current-buffer) t)) ; switch to most recent buffer, regardless of visibility
+C-x o ; other-window ; cycle through visible buffers
+
+C-x b ; switch-to-buffer ; by name, or buffer functions
+C-f   ; forward-char
+M-e   ; forward-sentence
+x     ; self-insert-command
+\r    ; newline (\r is return, \n is newline; i return as programs return ∵ i am a 3-bit computer)
+
+set-buffer() ; more common than switch-to-buffer(), probably because it is like putting a cd into a shcript versus putting a cd into a shell
+
+; Also, we have just introduced another jargon term, the word “call”. When you evaluate a list in which the first symbol is a function, you are calling that function.  The use of the term comes from the notion of the function as an entity that can do something for you if you call it; just as a plumber is an entity who can fix a leak if you call him or her.
+; spacetime resources are the currency you use to pay per call (no "free" calls)
+(lambda (x) x) ; can be a free call, but it depends who your service provider is
+; is it a free call if you call the user? the program is timeless, so the time is charged to the /usr/bill/, but the user can always put it in their /usr/bin/ if they want
+
+BUFFER SIZE & LOCATIONS: 2.4 BUFFER SIZE AND THE LOCATION OF POINT
+
+(buffer-size) ; global head count, but not sure about unicode support
+(point-min) ; local minimum, where narrowing means not always 1
+(point) ; global position, where calculus applies
+(point-max) ; local maximum, where narrowing means not always global maximum buffer-size()
+
+EVALUATION EXERCISE: 2.5 EXERCISE
+
+(buffer-name) ; buffer name
+(buffer-file-name) ; file name
+(buffer-size) ; length
+(point) ; position
+
+WRITING DEFUNS: 3 HOW TO WRITE FUNCTION DEFINITIONS
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Writing Defuns")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md
+; sentences are /\.\s\s/ for A.C.R.O.N.Y.M.S. #O.M.F.G. #W.T.F.
