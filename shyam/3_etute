@@ -121,4 +121,14 @@ M-x replace-string
 
 AUTO SAVE
 
-printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 708) (recenter-top-bottom 0)))'
+M-: (recover-this-file) ; M-x recover-this-file ; When it asks FO confirmation, type yes
+; #files# show up while using emacs, so i would rather save them in .emacs.d/
+; just make sure to C-x C-s ** to -- after editing, and before switching /buffers|windows/
+
+ECHO AREA
+
+the minibuffer when it is used to echo like a keylogger
+
+MODE LINE
+
+printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 734) (recenter-top-bottom 0)))'

@@ -86,6 +86,7 @@ C-x k ; q ; escape from the *Backtrace* buffer, (void-function f) versus (void-v
 (fset 'f (lambda (y) (set 'f (symbol-function 'f)) (fset 'f (lambda (x) (byte-compile 'f) x)) (f y))); this one works best
 (fset 'f (lambda (y) (fset 'f (lambda (x) x)) (set 'f (symbol-function 'f)) (byte-compile 'f) (f y))); this one is optimised, and caches the prime program ™
 (fset 'f (lambda (y) (set 'f (symbol-function 'f)) (fset 'f (lambda (x) x)) (byte-compile 'f) (f y))); this one is optimised, and caches the metaprogram
+(fset 'declare (lambda (f y) (fset f y) (set f (symbol-function f)) (byte-compile f) (symbol-value f))); this one has a generalised higher order, and caches the prime program ™
 ; I reject your reality and substitute my own. -- Adam, the Savage caveman from the garden of eden, who busted the myth that he has an apple stuck half way down his throat
 
 ARGUMENTS: 1.8 ARGUMENTS
@@ -203,8 +204,31 @@ EVALUATION EXERCISE: 2.5 EXERCISE
 
 WRITING DEFUNS: 3 HOW TO WRITE FUNCTION DEFINITIONS
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Writing Defuns")'
+; symbols are function pointers
+
+PRIMITIVE FUNCTIONS: AN ASIDE ABOUT PRIMITIVE FUNCTIONS
+
+; there are only a few primitive c functions
+; you DO distinguish between c functions, and elisp functions, which is NOT irrelevant ∵ c functions are not meta
+
+DEFUN: 3.1 THE ‘DEFUN’ MACRO
+
+mark-whole-buffer
+(defun
+	namespace ; self-documenting symbol
+	(a r g u m e n t s) ; "argument list"
+	"docstring"
+	(interactive api)
+	((a (r) g (u) (m e n) t s… - --- .--.
+(defun multiply-by-seven (multiplicand)
+	"Multiply FOOGLE by seven."
+		(* 7 multiplicand))
+C-h f ; describe-function() using docstring
+apropos() ; first line of docstring
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Install")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md
+=(X,X). % assuming unification is =/2, and prolog comments are percentages
 ; sentences are /\.\s\s/ for A.C.R.O.N.Y.M.S. #O.M.F.G. #W.T.F.
