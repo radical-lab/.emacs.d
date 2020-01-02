@@ -226,7 +226,15 @@ mark-whole-buffer
 C-h f ; describe-function() using docstring
 apropos() ; first line of docstring
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Install")'
+INSTALL: 3.2 INSTALL A FUNCTION DEFINITION
+
+; docstrings should capitalise on the arguments ∵ `C-h f` capitalises on the arguments; there is no other reason ∴ prolog is superior, since prolog always capitalises on the variables #iprefer
+; redeclaring functions is easier in lisp, than prolog…
+; In summary, this is how you write code in Emacs Lisp: you write a function; install it; test it; and then make fixes or enhancements and install it again.
+
+INTERACTIVE: 3.3 MAKE A FUNCTION INTERACTIVE
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Interactive")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md

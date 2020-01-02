@@ -127,8 +127,33 @@ M-: (recover-this-file) ; M-x recover-this-file ; When it asks FO confirmation, 
 
 ECHO AREA
 
-the minibuffer when it is used to echo like a keylogger
+; the minibuffer when it is used to echo like a keylogger
 
 MODE LINE
 
-printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 734) (recenter-top-bottom 0)))'
+; mode line (one per window/buffer)
+; echo area / miniature buffer (one per frame)
+;
+; mode line: '-:**- 'unsaved_file_name /\d\d%|Top|All|Bot/ /L(OC)?\d+/ '(mode_name)
+; mode line: '-:---   'saved_file_name /\d\d%|Top|All|Bot/ /L(OC)?\d+/ '(mode_name)
+;
+; major modes: fundamental-mode, lisp-mode, text-mode,..
+; Each major mode is the name of an extended command, which is how you can switch to that mode.  For example, M-x fundamental-mode is a command to switch to Fundamental mode.
+M-x text-mode ; Don't PANIC, none of the Emacs commands you have learned changes in any great way.  But you can observe that M-f and M-b now treat apostrophes as part of words.  Previously, in Fundamental mode, M-f and M-b treated apostrophes as word-separators.
+; Major modes usually make subtle changes like that one: most commands do "the same job" in each major mode, but they work a little bit differently.
+C-h m ; view documentation on your current major mode
+; >> Move the cursor to the line following this line.
+; >> Type C-l C-l to bring this line to the top of screen.
+; >> Type C-h m, to see how Text mode differs from Fundamental mode.
+; >> Type C-x 1 to remove the documentation from the screen.
+; Major modes are called major because there are also minor modes. Minor modes are not alternatives to the major modes, just minor modifications of them.  Each minor mode can be turned on or off by itself, independent of all other minor modes, and independent of your major mode.  So you can use no minor modes, or one minor mode, or any combination of several minor modes.
+; One minor mode which is very useful, especially for editing human-language text, is Auto Fill mode.  When this mode is on, Emacs breaks the line in between words automatically whenever you insert text and make a line that is too wide.
+; You can turn Auto Fill mode on by doing M-x auto-fill-mode <Return>. When the mode is on, you can turn it off again by doing M-x auto-fill-mode <Return>.  If the mode is off, this command turns it on, and if the mode is on, this command turns it off.  We say that the command "toggles the mode".
+M-x auto-fill-mode ; is not a good mode
+; The margin is usually set at 70 characters, but you can change it with the C-x f command.  You should give the margin setting you want as a numeric argument.
+C-u 20 C-x f ; only works for auto-fill-mode
+; If you make changes in the middle of a paragraph, Auto Fill mode does not re-fill it for you. To re-fill the paragraph, type M-q (META-q) with the cursor inside that paragraph.
+
+SEARCHING
+
+printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 838) (recenter-top-bottom 0)))'
