@@ -222,19 +222,38 @@ mark-whole-buffer
 	((a (r) g (u) (m e n) t s… - --- .--.
 (defun multiply-by-seven (multiplicand)
 	"Multiply FOOGLE by seven."
-		(* 7 multiplicand))
+	(* 7 multiplicand))
 C-h f ; describe-function() using docstring
 apropos() ; first line of docstring
 
 INSTALL: 3.2 INSTALL A FUNCTION DEFINITION
 
+(defun multiply-by-seven (multiplicand) ; second version
+	"Multiply FOOGLE by seven."
+	(+ multiplicand multiplicand multiplicand multiplicand multiplicand multiplicand multiplicand))
 ; docstrings should capitalise on the arguments ∵ `C-h f` capitalises on the arguments; there is no other reason ∴ prolog is superior, since prolog always capitalises on the variables #iprefer
 ; redeclaring functions is easier in lisp, than prolog…
 ; In summary, this is how you write code in Emacs Lisp: you write a function; install it; test it; and then make fixes or enhancements and install it again.
 
 INTERACTIVE: 3.3 MAKE A FUNCTION INTERACTIVE
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)Interactive")'
+(interactive) ; special form that makes a declaration usable from M-x, and boundable
+C-h k C-g ; ⸘does not escape‽
+(message "hello echo area") ; interactive functions don't automagically `exit;echo $?`
+(defun multiply-by-seven (multiplicand) ; interactive version
+	"Multiply FOOGLE by seven."
+	(interactive "p") ; prefix argument
+	(message "7×%d=%d" multiplicand (* 7 multiplicand)))
+C-u 3 M-x multiply-by-seven
+; prefix arguments are either C-u 108, or M-108, but my terminal pwnz M-108
+((lambda () (message "hello echo area")))
+(progn (message "hello echo area"))
+; does not seem to remove quotes unless called interactively
+; side effects have no quotes, and idk what side effects even are anymore…
+
+INTERACTIVE OPTIONS: 3.4 DIFFERENT OPTIONS FOR ‘INTERACTIVE’
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr) Interactive Options")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md

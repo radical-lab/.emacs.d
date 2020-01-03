@@ -2,6 +2,7 @@ frame: terminal emulator, console,.. #physical
 window: partition,.. #physical
 buffer: cache,.. #mental #clerical #intellectual #spiritual #abstract #intangible #metaphysical
 ; to buff the window inside the frame ∘ windows ∘ buffers
+; buffer = padding
 …
 modeline: metadata
 …
@@ -20,3 +21,7 @@ point
 
 call ; procedure call, function call, telephone call,..
 argument list
+prefix argument
+interactive
+electric
+"not a side effect" ; side effect

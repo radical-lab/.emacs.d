@@ -156,4 +156,18 @@ C-u 20 C-x f ; only works for auto-fill-mode
 
 SEARCHING
 
-printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 838) (recenter-top-bottom 0)))'
+; Searching for a string is a cursor motion command; it moves the cursor to the next place where that string appears.
+; The Emacs search command is "incremental".  This means that the search happens while you type in the string to search for.
+C-s ; forward search
+C-r ; reverse search
+; When you type C-s you'll notice that the string "I-search" appears as a prompt in the echo area.  This tells you that Emacs is in what is called an incremental search waiting for you to type the thing that you want to search for.
+; Emacs, in an incremental search, tries to go to the occurrence of the string that you've typed out so far.  To go to the next occurrence of "cursor" just type C-s again.  If no such occurrence exists, Emacs beeps and tells you the search is currently "failing".  C-g would also terminate the search.
+; If you are in the middle of an incremental search and type <DEL>, the search "retreats" to an earlier location.  If you type <DEL> just after you had typed C-s to advance to the next occurrence of a search string, the <DEL> moves the cursor back to an earlier occurrence.  If there are no earlier occurrences, the <DEL> erases the last character in the search string.
+; If you are in the middle of a search and type a control or meta character (with a few exceptions--characters that are special in a search, such as C-s and C-r), the search is terminated.
+; C-s starts a search that looks for any occurrence of the search string AFTER the current cursor position.  If you want to search for something earlier in the text, type C-r instead.  Everything that we have said about C-s also applies to C-r, except that the direction of the search is reversed.
+;
+; it searches after point so the cursor can be on the first occurance, and the first search may not move the cursor
+
+MULTIPLE WINDOWS
+
+printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 893) (recenter-top-bottom 0)))'

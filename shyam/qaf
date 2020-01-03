@@ -33,7 +33,7 @@ https://www.gnu.org/software/emacs/manual/html_node/emacs/Using-Region.html
 C-w ; kill region
 M-w ; C-w C-y
 C-k ; cut to C-e
-C-y ; paste
+C-y ; paste (how do i cycle through these again?)
 /((C-g)? C-_)*/ ; /(un|re)do/, where C-g toggles
 
 /F3 .* F4 (F4)*/ ; macros (vim supports more, but not that much more) this is what you do for all actions; sandwich them between macros (kind of like vim \e in terms of frequency, but for vim \.) it's just bound to inconvenient keys for some"-thing" that's so fundamentally useful; unless there's another way?
@@ -47,6 +47,7 @@ https://stackoverflow.com/a/1512270
 (dotimes (i 24) (insert (format "\t%02d;\n" i))); (1+ i))))
 …
 i agree that elisp is better than macros, and it's probably for the best that macros are inconvenient; what i need is `M-: ( C-a )` = `M-: ( move-beginning-of-line )`; or just use au\tocomple\tion
+i really like being able to just M-w, and C-y, code into the minibuffer
 
 C-x C-s ; save
 C-x C-c ; escape
@@ -57,6 +58,12 @@ C-g ; vim \e
 /(C|M)-v/ ; page /up|down/ …do i really actually use this?
 
 C-e C-k \s C-b ; vim S-j
+
+C-h k
+C-h f
+
+C-j
+C-x C-e
 
 TODO
 	goto loc (makes /M-(<|>)/ redundant)
