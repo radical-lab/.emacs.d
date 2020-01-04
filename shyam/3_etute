@@ -1,3 +1,4 @@
+GNU Emacs 26.1
 printf \\ec;emacs -nw --no-splash --eval='(help-with-tutorial)'
 
 /C-./ ; controlled commands
@@ -170,4 +171,40 @@ C-r ; reverse search
 
 MULTIPLE WINDOWS
 
-printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 893) (recenter-top-bottom 0)))'
+; The Emacs manual contains a Glossary of Emacs terms. #word
+C-x 0 ; delete-window
+C-x 1 ; delete-other-windows
+C-x 2 ; split-window-below
+C-x 3 ; split-window-right
+C-x 40 ; kill-buffer-and-window
+C-x 50 ; delete-frame
+C-x 51 ; delete-other-frames
+C-x 52 ; make-frame-command
+C-x 62 ; 2C-two-columns
+C-x 81
+C-x 82
+C-x 83
+C-M-v ; scroll-other-window
+C-x o ; other-window
+C-x 4 C-f ; find-file-other-window (other-window)
+
+MULTIPLE FRAMES
+
+; idk what just happened, but it seems to be the same session; i think it's like workspaces, but i never use them since my computer freezes whenever i have too many "-thing"s open at the same time #firstworldproblems
+; i declare a freeze to be when the visual interface pauses (not blank, or whatever; but i guess it's frozen too…)
+C-x 50 ; delete-frame ; does not delete the last frame
+C-x 51 ; delete-other-frames
+C-x 52 ; make-frame-command
+
+RECURSIVE EDITING LEVELS
+
+\e\e\e ; keyboard-escape-quit ; delete-other-windows
+C-g ; keyboard-quit
+; Sometimes you will get into what is called a "recursive editing level".  This is indicated by square brackets in the mode line, surrounding the parentheses around the major mode name.  For example, you might see [(Fundamental)] instead of (Fundamental).
+; To get out of the recursive editing level, type <ESC> <ESC> <ESC>. That is an all-purpose "get out" command.  You can also use it for eliminating extra windows, and getting out of the minibuffer.
+; >> Type M-x to get into a minibuffer; then type <ESC> <ESC> <ESC> to get out.
+; You cannot use C-g to get out of a recursive editing level.  This is because C-g is used for canceling commands and arguments WITHIN the recursive editing level.
+
+GETTING MORE HELP
+
+printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 1005) (recenter-top-bottom 0)))'

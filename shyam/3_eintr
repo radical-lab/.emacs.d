@@ -1,3 +1,4 @@
+GNU Emacs 26.1
 printf \\ec;emacs -nw --no-splash --eval='(info "eintr")'
 
 PREFACE: PREFACE
@@ -253,7 +254,32 @@ C-u 3 M-x multiply-by-seven
 
 INTERACTIVE OPTIONS: 3.4 DIFFERENT OPTIONS FOR ‘INTERACTIVE’
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr) Interactive Options")'
+; so interactive functions can only have one prefix argument? C-u C-u 3 C-u C-u 3 C-u 3 just returns "333"
+; (interactive "aPrompt a: \nrPrompt r: \ngPrompt g: \nuPrompt u: \nmPrompt m: \nePrompt e: \nnPrompt n: \ntPrompt t: \nsPrompt s: ")
+zap-to-char ; (interactive "p\ncZap to char: ")
+; Thus, if your prefix is three and the specified character is ‘x’, then you will delete all the text up to and including the third next ‘x’.  If you do not set a prefix, then you delete all the text up to and including the specified character, but no more.
+; The ‘c’ tells the function the name of the character to which to delete.
+copy-to-buffer
+(interactive) ; no arguments
+mark-whole-buffer/0
+; Alternatively, if the special letter-codes are not right for your application, you can pass your own arguments to ‘interactive’ as a list.
+append-to-buffer
+
+PERMANENT INSTALLATION: 3.5 INSTALL CODE PERMANENTLY
+
+.emacs
+.emacs.d/init.el
+(load "~/harem/.emacs.d/init.el")
+(load "./lib/meta.el") ; metæl ; metal
+(load "./lib/*")
+• Thirdly, if you have code that your whole site will use, it is usual to put it in a file called ‘site-init.el’ that is loaded when Emacs is built.  This makes the code available to everyone who uses your machine.  (See the ‘INSTALL’ file that is part of the Emacs distribution.)
+; Finally, if you have code that everyone who uses Emacs may want, you can post it on a computer network or send a copy to the Free Software Foundation.  (When you do this, please license the code and its documentation under a license that permits other people to run, copy, study, modify, and redistribute the code and which protects you from having your work taken from you.)  If you send a copy of your code to the Free Software Foundation, and properly protect yourself and others, it may be included in the next release of Emacs.  In large part, this is how Emacs has grown over the past years, by donations.
+;
+; your work can never be taken from you, unless it is a derivative, or you sell it; sometimes you can undo, and even get more than you had before!!! :D
+
+LET: 3.6 ‘LET’
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)let")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md
