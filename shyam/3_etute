@@ -207,4 +207,18 @@ C-g ; keyboard-quit
 
 GETTING MORE HELP
 
-printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 1005) (recenter-top-bottom 0)))'
+C-h ; the help character ; all help commands start with the help character
+C-h ? ; help-for-help
+F1
+M-x help
+C-h c ; describe-key-briefly ; C-h k but in the echo area
+C-h k ; describe-key
+C-h f ; describe-function
+C-h v ; describe-variable
+C-h a ; apropos-command ; These commands can all be invoked with META-x. For some commands, Command Apropos will also list a sequence of one or more characters which runs the same command. You will see character-commands listed beside the corresponding command names (such as C-x C-f beside find-file).
+C-M-v ; scroll-other-window ; scroll the help window
+C-h i ; info ; `m emacs` = emacs manual, `h` = a guided tour of info mode
+
+MORE FEATURES
+
+printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 1093) (recenter-top-bottom 0)))'

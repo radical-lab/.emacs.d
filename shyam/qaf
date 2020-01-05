@@ -60,8 +60,11 @@ C-g ; vim \e
 
 C-e C-k \s C-b ; vim S-j
 
-C-h k
+C-h c ; it is like a k, but just not as much of k, as it can also be /lisp|licp|lithp/
+C-h k ; i probably willn't use this as much anymore, even though it is easier to remember
 C-h f
+C-h v
+C-h a
 
 C-j
 C-x C-e

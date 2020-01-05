@@ -1,0 +1,127 @@
+Clocksin And Mellish
+Programming In Prolog
+
+todo
+	read this book
+	…
+	read Clause And Effect by Clocksin
+	Prolog: The Standard by Deransart, Dbali, Cervoni
+
+………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
+
+PREFACE TO THE FIFTH EDITION
+
+% Clause And Effect must be read after this book
+% Prolog: The Standard must be read with this book, but i am using swipl; so i will read it last, when i use swipl to bootstrap a self-hosted isolog, and then use isolog to "make a lisp" that is isolog-hosted…but it probably willn't be isolog, since Iso Sucks Officially
+% Edinburgh Prolog was probably better than ISO Standard Prolog
+% potpourri
+% replayability:
+	% table of differences between Edinburgh Prolog, and ISO Standard Prolog
+	% description of each chapter
+
+………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
+
+TABLE OF CONTENTS
+
+% chapter 4: i remember generate, and test, from mit artificial intelligence videos; prolog backpropagates for free
+% chapter 5: iprefer to process characters instead of words, unless the language does not feature punctuation,.. (it looks like they have both, but a term could mean any"-thing")
+% chapter 7: symbolic differentiation probably sounds more impressive than it really is, but manipulating programs is meta
+% chapter 8: this looks useful (i never learned most of this)
+% chapter 9: i have been assuming grammar rules are definite clause grammars, and continue to do so
+% chapter 10: i am optimistic about all of this
+% chapter 11: i hope language learning is included ∵ i plan to use prolog to learn sanskrit next month, instead of working for the dole (https://www.open.edu.au/subjects/australian-national-university-sanskrit-1-anu-skrt1002?year=2020)
+% chapter C: posix; idk how isomorphic prolog commpares to isomorphic lisp…
+% chapter D: so maybe grammar rules aren't definite clause grammars?
+% replayability:
+	% every"-thing"
+
+………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
+
+TUTORIAL INTRODUCTION
+
+1.1 PROLOG
+
+% prolog is 1970s, lisp is 1950s; both support symbolic computation
+% prolog is both descriptive, and prescriptive, but more descriptive than prescriptive
+% prolog computation = logical declarative semantics + inference + explicit control information (like cut?)
+% replayability:
+	% list ∘ bullets c̄ names ∘ applications ÷ each ∘ them
+
+1.2 OBJECTS AND RELATIONSHIPS
+
+% prolog is not object oriented; nouns would be a more suitable choice of words
+% i feel like this is the wrong way to think about prolog; valuable(jewel), where "valuable", and "jewel", should be considered abstractions with no consideration for assumed realities; the meaning of words is not independent, and the authors of dictionaries do not reference any"-thing" ∴ academics are fawlty
+% i should find my other notes; i think property(value) is better, but i know i noted other naming conventions
+owned_by(S,M):-owns(M,S). % this is not thinking abstractly; do not give more (implied) value to "-thing"s than is necessary, nor maintainable, nor elegant, nor abstract, nor symbolic,..
+"Prolog's fexibility means that it is possible to write a Prolog program that interprets a Prolog-like object-oriented language, but that is a different matter.".
+"Prolog is a practical and efficient implementation of many aspects of \"intelligent\" program execution, such as non-determinism, parallelism, and pattern-directed procedure call.".
+% the prolog term is a uniform data structure #homoiconicity
+% clauses include informative facts, and inferrence rules
+"Prolog can be seen as a first step towards the ultimate goal of programming in logic.".
+"Prolog is not the ultimate logic programming language.".
+rule :- definition. % declarations is a better word than definitions, but dictionary definitions is linguistic; declarative programming versus language processing…lisp can be declarative, while prolog is linguistic; although, john mccarthy considers lists to be linguistic…
+%
+% gödel supports abstraction over completeness
+% think of it in terms of graph theory; each noun is a vertex, and clauses are edges that connect them together (for some reason i had neural networks in mind; oh, that explains the computational process)
+
+1.3 PROGRAMMING
+
+% roll credits
+% prolog is all about querying a knowledgebase(clauses(facts,rules))
+% inferences lead to logical deductions
+"The usual way to use Prolog is interactively, which means that you and the computer carry out a kind of conversation.". % this sounds like the matrix
+% keywords: keyboard, display,..
+
+1.4 FACTS
+
+fact(Variable,constant).
+"The order is arbitrary, but you must decide on some order and be consistent about it.". % i like the freedom of choice for arbitrary conventions
+giver_gift_givee(Giver,Gift,Givee). % this is self-documenting
+"Each time a name is used, the name refers to a particular individual object. Because of our familiarity with English, it is fairly clear that the names john and jane refer to individuals. But in some other facts, we have used the names gold and valuable and it is not obvious that they refer to individuals. This sort of name is called a \"non-count word\" by logicians. When using names, we must decide on how to interpret the name.". % the next paragraph is even more confusing; while reality may have some bearing on the abstractions, you only have to remember what each symbol represents from reality (ifn't purely abstract) ∴ no interpretation is needed, but maybe some docommentation… (self-docommentation)
+predicate(arguments). % are we going to learn about arity? or are you just going to describe it c̄out naming it? mit artificial intelligence videos were all about naming "-thing"s for empowerment (repunzle spindlewheel principle; the lecturer couldn't spell either…so why did i get marked down for incomplete sentences that one time? after i finished my b.it degree c̄out ever getting marked down for incomplete sentences before…)
+a(b,c). % much better ∵ there is no interpretation involved
+% assumed true; mayn't be really true now, but maybe in the future, but time is relative,..
+% s/data/knowledge
+
+1.5 QUESTIONS
+
+?- % why?
+% iprefer "is it true that owns(mary,book)?", "is owns(mary,book). true?", or "owns(mary,book). %  is true", but't'sn't /mary owns (a|the|all)? books?/; {owns,mary,book} in the context of prolog are abstract concepts
+=(X,X). % unification; same predicate, arguments, arity,..
+% unification is the ultimate answer; an honest query clause unifies with a fact in the knowledge base system, or a rule implied therein, but a dishonest query clause multifies, and that is the naive lie detection principle based on pure assumptions
+% no mention of satisfiable goals…
+"It is important to remember that no is not the same as false.".  % because unification does not support =(no,false),=(yes,true).
+"Although it may be true in real history that Aristotle once lived in Athens, we cannot prove it simply from the facts shown in the database.".
+	human(socrates).
+	human(aristotle).
+	athenian(socrates).
+	?- athenian(socrates).
+	yes
+	?- athenian(aristotle).
+	no
+	% but prolog needn't consider reality, as the kbs is its' reality ∴ i reconsider =(no,false),=(yes,true).
+	?- greek(socrates).
+	no % this is the ultimate answer
+	∵ ∄ greek/1 % this debugging feature should be configurable, as it incurs a technical debt
+	Existence error: procedure greek % should not that be s/procedure/predicate
+
+1.6 VARIABLES
+
+% possibilities versus probabilities
+% instantiation versus unification
+?- \==(X,3),=(X,3). % this should be /false|no|err/
+X = 3. % swipl
+% this would be a good time to use teach pattern matching; unification
+% top-to-bottom, left-to-right
+% the unifier does not need to be marked; just maintain a retrievable list ∘ [[Unifier,X_line,Y_char]]
+% swipl only needs /;/ for possibilities, not /;\r/, but /\r/ escapes
+"When Prolog begins searching from a place-marker instead of from the beginning of the database, we say that Prolog is attempting to re-satisfy the question.".
+% re-satisfy versus possibilities
+% actually, backtracking makes the retrievable list redundant; but it can be useful for interactive debugging, hot patching, reactive programming, metaprogramming,..
+% iprefer "is there a symbol that likes/2 the symbol mary"; forget /objects|nouns/, and call it what it is; constants, and Variables, but they don't necessarily represent symbols ∵ symbols are just an abstract data type
+?-  human(X).
+X = socrates ;
+X = aristotle ;
+nil % as a lazy retrievable list
+
+1.7 CONJUNCTIONS

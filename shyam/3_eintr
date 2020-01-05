@@ -279,6 +279,19 @@ PERMANENT INSTALLATION: 3.5 INSTALL CODE PERMANENTLY
 
 LET: 3.6 ‘LET’
 
+; In computer science jargon, we would say the binding of a symbol is visible only in functions called in the ‘let’ form; in Emacs Lisp, scoping is dynamic, not lexical.
+; ‘let’ can create more than one variable at once.  Also, ‘let’ gives each variable it creates an initial value, either a value specified by you, or ‘nil’.  (In the jargon, this is binding the variable to the value.)
+; After ‘let’ has created and bound the variables, it executes the code in the body of the ‘let’, and returns the value of the last expression in the body, as the value of the whole ‘let’ expression. (“Execute” is a jargon term that means to evaluate a list; it comes from the use of the word meaning “to give practical effect to” (‘Oxford English Dictionary’).  Since you evaluate an expression to perform an action, “execute” has evolved as a synonym to “evaluate”.)
+(let VARLIST BODY...)
+; The symbols in the varlist are the variables that are given initial values by the ‘let’ special form.  Symbols by themselves are given the initial value of ‘nil’; and each symbol that is the first element of a two-element list is bound to the value that is returned when the Lisp interpreter evaluates the second element.
+; Thus, a varlist might look like this: ‘(thread (needles 3))’.  In this case, in a ‘let’ expression, Emacs binds the symbol ‘thread’ to an initial value of ‘nil’, and binds the symbol ‘needles’ to an initial value of 3.
+(let ((VARIABLE VALUE)...) BODY...)
+(let ((zebra "stripes") (tiger "fierce")) (message "One kind of animal has %s and another is %s." zebra tiger))
+; According to Jared Diamond in ‘Guns, Germs, and Steel’, “... zebras become impossibly dangerous as they grow older” but the claim here is that they do not become fierce like a tiger.  (1997, W. W. Norton and Co., ISBN 0-393-03894-2, page 171)
+(let ((birch 3) pine fir (oak 'some)) (message "Here are %d variables with %s, %s, and %s value." birch pine fir oak))
+
+IF: 3.7 THE ‘IF’ SPECIAL FORM
+
 printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)let")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
