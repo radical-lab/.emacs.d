@@ -292,7 +292,46 @@ LET: 3.6 ‘LET’
 
 IF: 3.7 THE ‘IF’ SPECIAL FORM
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)let")'
+; A third special form, in addition to ‘defun’ and ‘let’, is the conditional ‘if’.
+beginning-of-buffer
+(if test action)
+(if if-part then-part)
+(if TRUE-OR-FALSE-TEST
+	ACTION-TO-CARRY-OUT-IF-TEST-IS-TRUE)
+(if (> 5 4)                         ; if-part
+	(message "5 is greater than 4!")); then-part
+(defun type-of-animal (characteristic)
+	"Print message in echo area depending on CHARACTERISTIC.
+If the CHARACTERISTIC is the string \"fierce\",
+then warn of a tiger."
+	(if (equal characteristic "fierce") (message "It is a tiger!")))
+(type-of-animal "fierce")
+(type-of-animal "striped")
+; did not mention C-x C-e
+; The template for every function that is not interactive is:
+(defun NAME-OF-FUNCTION (ARGUMENT-LIST) "DOCUMENTATION..." BODY...)
+; The parts of the function that match this template look like this:
+(defun type-of-animal (characteristic)
+	"Print message in echo area depending on CHARACTERISTIC.
+If the CHARACTERISTIC is the string \"fierce\",
+then warn of a tiger."
+	BODY: THE if EXPRESSION)
+; The template for an ‘if’ expression looks like this:
+(if TRUE-OR-FALSE-TEST
+	ACTION-TO-CARRY-OUT-IF-THE-TEST-RETURNS-TRUE)
+; In the ‘type-of-animal’ function, the code for the ‘if’ looks like this:
+(if (equal characteristic "fierce")
+	(message "It is a tiger!")))
+Here, the true-or-false-test is the expression:
+(equal characteristic "fierce")
+;
+(if (< 1 2) (message "a") (message "b") (sleep-for 1) (message "c"))
+(if (< 2 1) (message "a") (message "b") (sleep-for 1) (message "c"))
+; oh the next section just says else but is really deceptive
+
+ELSE: 3.8 IF–THEN–ELSE EXPRESSIONS
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)else")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md

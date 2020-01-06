@@ -221,4 +221,18 @@ C-h i ; info ; `m emacs` = emacs manual, `h` = a guided tour of info mode
 
 MORE FEATURES
 
-printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 1093) (recenter-top-bottom 0)))'
+C-h r ; info-emacs-manual
+; Two features that you may like especially are completion, which saves typing, and dired, which simplifies file handling.
+\t ; indent-for-tab-command ; autocomplete
+; Dired enables you to list files in a directory (and optionally its subdirectories), move around that list, visit, rename, delete and otherwise operate on the files.
+
+CONCLUSION
+
+C-x C-c ; save-buffers-kill-terminal
+
+COPYING
+
+shouldn't this be read first?
+i read it all into the forgetting curve.
+
+printf \\ec;emacs -nw --no-splash --eval='((lambda () (help-with-tutorial) (goto-line 1155) (recenter-top-bottom 0)))'

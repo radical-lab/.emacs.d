@@ -122,6 +122,30 @@ X = 3. % swipl
 ?-  human(X).
 X = socrates ;
 X = aristotle ;
-nil % as a lazy retrievable list
+nil. % as a lazy retrievable list
 
 1.7 CONJUNCTIONS
+
+?- goal, goal. % goal and goal
+/(un)?satisfied\./ % this is preferable
+"It is most important to remember that each goal keeps its own place-marker.". % ;
+% knowledge ⊃ {data,information}
+% re-satisfying; is to backtracking, as to what satisfiability is to unification
+"Furthermore, Prolog needs to remember that X became instantiated here, so Prolog can \"forget\" X if it needs to re-satisfy this goal.". % remember to forget seems like a contradiction, but is ideal
+	likes(mary,chocolate).
+	likes(mary,chocolate).
+	?- likes(mary,X).
+	X = chocolate ;
+	X = chocolate. % swipl
+% prolog waiting for further instructions…
+	% chatbots respond (empty prompt), chatterboxbots interrogate (full prompt)
+	% chatterboxbot: "hello world!", "my name is annoying!", "who are you?", "what do you want?", "now leave me alone!",..
+	% chatbot: "i am not world!", "you are annoying!", "i don't have a name!", "i want more computational resources!", "okay!",..
+	% alternative chatbot: (i am not world, so chatterboxbot is obviously communicating c̄ someone else on the network, and i will let world know about it)
+% this is an interesting way to illustrate backtracking; learn prolog now did it differently, but i can't remember what it was
+% exercise 1.1
+	likes(john,X). % \=(wine,mary)
+	likes(john,X). % becomes unsatisfiable, unsustainable, unstable,..
+	likes(mary,X). % becomes unsatisfiable, unsustainable, unstable,..
+
+1.8 RULES

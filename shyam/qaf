@@ -69,6 +69,9 @@ C-h a
 C-j
 C-x C-e
 
+C-z
+/fg|%emacs/
+
 TODO
 	goto loc (makes /M-(<|>)/ redundant)
 		draw relative loc# (absolute loc y is in the mode line, but need char x)

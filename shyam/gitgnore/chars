@@ -10,6 +10,21 @@ e∈{S}
 e∉{S}
 {S}∋e
 {S}∌e
+{1,2,3}         ⊆{1,2,3}   , A⊆B = A is a "subset" of B
+{1,2}           ⊊{1,2,3}   , A⊊B = A is a "proper subset" of B
+⊄
+⊈
+⊂
+⊃
+⊅
+⊇
+⊉
+⊋
+{1,2,3}∪{2,3,4} = {1,2,3,4}, A∪B = "union" of A and B
+{1,2,3}∩{2,3,4} = {2,3}    , A∩B = "intersection" of A and B
+{2,3,4}\{1,2,3} = {4}      , U\A = "difference" of U and A
+{1,2,3}\{2,3,4} = {1}      , A\U = "difference" of A and U
+{1,2,3}\{2}     = {1,3}    , A\U = "complement" of U in A
 Not: ¬,!
 And: ∧,&&
 Or : ∨,||
