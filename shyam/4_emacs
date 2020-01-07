@@ -1,0 +1,22 @@
+GNU Emacs 26.1
+printf \\ec;emacs -nw --no-splash --eval='(info "emacs")'
+
+DISTRIB: DISTRIBUTION
+
+; consumer protection laws also apply to software (no such "-thing" as "no warranty", "no refund",..) ∴ this is a social engineering attack, which is a criminal offence!
+
+INTRO: INTRODUCTION
+
+"The ‘G’ in GNU (GNU’s Not Unix) is not silent." ; like Knuth(Ka-NOOTH.), TeX(τέχ), /Linu(s|x)/(https://mirrors.edge.kernel.org/pub/linux/kernel/SillySounds/), gif(Jif; Choosy developers choose GIF), cache(cash; like stash, but french), Haskell(Has Kell?), Shyam(Śyāma),..
+; it is pronounced as one syllable with a hard g, like “grew” but with the letter “n” instead of “r”.
+; Ga-NOO.
+; emacs can control subprocesses
+"Emacs editing commands operate in terms of characters, words, lines, sentences, paragraphs, and pages, as well as expressions and comments in various programming languages."
+; self-docommentation includes namespaces, but iprefer intelligence to automate it
+; indentation is not easy to configure ∵ modes got in my way, or maybe i just didn't update my .emacs.d?..
+; i think it's called hot patching
+"Most of the editing commands in Emacs are written in Lisp; the few exceptions could have been written in Lisp but use C instead for efficiency." ; Elisp Machine Accumulating C Supplements
+
+SCREEN: 1 THE ORGANIZATION OF THE SCREEN
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(emacs)Screen")'

@@ -149,3 +149,24 @@ nil. % as a lazy retrievable list
 	likes(mary,X). % becomes unsatisfiable, unsustainable, unstable,..
 
 1.8 RULES
+
+"In English, we use the word \"if\" to express a rule.".
+"Rules are also used to express definitions, for example:".
+% i think this is /iff|implication/
+"A rule is a general statement about objects and their relationships.". % most of this is in italics ∴ it must be important
+head :- body.
+conclusion :- premises.
+"The \":-\" is pronounced if.". % not iff? but it must be implied at the very least!
+sister_of(S,O) :- true
+	, female(S)
+	, parents(S,M,F)
+	, parents(O,M,F)
+	. % iprefer
+"As variable X in the question is uninstantiated, then variable Y in the question will also be uninstantiated.". % i think it's supposed to be; X in the question, Y in the rule; otherwise i'm thoroughly confused! (and later on they support my hypothesis)
+"We can also say that these variables are coreferences, because each one references the other.". % /shared|coreferencing/ variables
+"These are called the clauses for a predicate.". % /facts|rules/ for P/N
+"We have added some clause numbers enclosed between /*...*/ brackets.". % those are not brackets! (but apparently comments?)
+% logical deduction
+% the scoping principle
+
+1.9 SUMMARY AND EXERCISES

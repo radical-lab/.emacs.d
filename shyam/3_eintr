@@ -331,7 +331,50 @@ Here, the true-or-false-test is the expression:
 
 ELSE: 3.8 IF–THEN–ELSE EXPRESSIONS
 
-printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)else")'
+(if if-part then-part else-part)
+(if TRUE-OR-FALSE-TEST
+		ACTION-TO-CARRY-OUT-IF-THE-TEST-RETURNS-TRUE
+	ACTION-TO-CARRY-OUT-IF-THE-TEST-RETURNS-FALSE)
+(if (> 4 5)                                ; if-part
+		(message "4 falsely greater than 5!"); then-part
+	(message "4 is not greater than 5!"))   ; else-part
+; Note that the different levels of indentation make it easy to distinguish the then-part from the else-part.  (GNU Emacs has several commands that automatically indent ‘if’ expressions correctly.  *Note GNU Emacs Helps You Type Lists: Typing Lists.)
+; ^ i hate that until i get it working how i want it to work
+(defun type-of-animal (characteristic)  ; Second version.
+	"Print message in echo area depending on CHARACTERISTIC.
+If the CHARACTERISTIC is the string \"fierce\",
+then warn of a tiger; else say it is not fierce."
+	(if (equal characteristic "fierce")
+		(message "It is a tiger!")
+		(message "It is not fierce!")))
+(type-of-animal "fierce")
+(type-of-animal "striped")
+; no muliple else?
+
+TRUTH & FALSEHOOD: 3.9 TRUTH AND FALSEHOOD IN EMACS LISP
+
+; this is one of the most debated concepts in computer science, but it's conventional until a strong argument is made
+; false = nil
+; true ≠ nil
+; In other words, the result of the test is considered true if the value returned is a number such as 47, a string such as ‘"hello"’, or a symbol (other than ‘nil’) such as ‘flowers’, or a list (so long as it is not empty), or even a buffer!
+; nil = (quote ())
+; As far as the Lisp interpreter is concerned, ‘()’ and ‘nil’ are the same.  Humans, however, tend to use ‘nil’ for false and ‘()’ for the empty list.
+; I reject your reality and substitute my own. -- Adam, the Savage caveman from the garden of eden, who busted the myth that he has an apple stuck half way down his throat
+(if 4 'true 'false)
+(if nil 'true 'false)    ; nil = (quote nil)
+(if 'nil 'true 'false)   ; nil = (quote nil)
+(if 'false 'true 'false) ; nil ≠ (quote false)
+(if false 'true 'false)  ; ∄ false
+; Incidentally, if some other useful value is not available for a test that returns true, then the Lisp interpreter will return the symbol ‘t’ for true.
+(> 5 4)    ; (quote t)
+(> 4 5)    ; (quote nil)
+t          ; (quote t)
+nil        ; (quote nil)
+(quote ()) ; (quote nil)
+
+SAVE-EXCURSION: 3.10 ‘SAVE-EXCURSION’
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(eintr)save-excursion")'
 
 ; i want a STOP to preprocess into the remaining closing parentheses to balance it all out up to that point, ignoring the rest of the sauce #cookbook
 ; symbol manipulation is to lisp what unification is to prolog; more powerful abstractions, where lisp is a subset of prolog, in that they are both support symbolic programming, and my self-assessment (whatever that means) is much higher for lisp than prolog https://github.com/Dobiasd/articles/blob/master/programming_language_learning_curves.md

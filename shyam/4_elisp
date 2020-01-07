@@ -1,0 +1,6 @@
+GNU Emacs 26.1
+printf \\ec;emacs -nw --no-splash --eval='(info "elisp")'
+
+
+
+printf \\ec;emacs -nw --no-splash --eval='(info "(elisp)")'

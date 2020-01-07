@@ -1,3 +1,21 @@
+health(physical).
+wpm('80s').
+fluent(emacs).
+fluent(elisp).
+fluent(swipl).
+fluent(ghc). % maybe; see how sanskrit goes…
+fluent(sanskrit).
+swipl(sanskrit),swipl(lojban),swipl(https://en.wikipedia.org/wiki/World_language),swipl(https://en.wikipedia.org/wiki/List_of_languages_by_number_of_native_speakers),swipl(https://en.wikipedia.org/wiki/List_of_languages_by_total_number_of_speakers),swipl(https://en.wikipedia.org/wiki/List_of_countries_by_internet_users),swipl(https://en.wikipedia.org/wiki/List_of_countries_by_Internet_connection_speeds),swipl(https://en.wikipedia.org/wiki/List_of_countries_by_natural_disaster_risk),swipl(https://en.wikipedia.org/wiki/Neutral_country),swipl(https://en.wikipedia.org/wiki/List_of_countries_by_life_expectancy),swipl(https://en.wikipedia.org/wiki/List_of_countries_by_incarceration_rate),swipl(https://en.wikipedia.org/wiki/List_of_countries_by_intentional_death_rate),swipl(https://en.wikipedia.org/wiki/List_of_countries_by_intentional_homicide_rate),swipl(https://en.wikipedia.org/wiki/List_of_cities_by_murder_rate),swipl(https://en.wikipedia.org/wiki/List_of_countries_by_suicide_rate),swipl(https://en.wikipedia.org/wiki/Tax_haven),swipl("most vegan friendly /country|city/"),swipl(https://en.wikipedia.org/wiki/List_of_highest_cities),swipl(https://en.wikipedia.org/wiki/List_of_highest_towns_by_country).
+swipl(prolog).
+prolog(prolog).
+prolog(lisp).
+lisp(emacs).
+prolog(emacs).
+prolog(lisp(emacs)).
+prolog(boxp).
+% maybe start considering /safety|security/ over productivity
+'√ [ (卐) ]'. % learn from mistakes, or skip A(lisp),B(emacs),D(C(emacs)).
+…
 i could graph my progress of `wc` over time
 conshell: śaṅkha(lipi)
 	written in elisp, but as dialectically agnostic as possible; isomorphic lisp #dsl
